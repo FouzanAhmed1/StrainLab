@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03F724270FB344329654008D /* CDRecoveryScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41841DFAB82F4ED7314ED60 /* CDRecoveryScore.swift */; };
+		0B83B24C642FC9B3C639D788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68543CCA73E06D66457488C /* Assets.xcassets */; };
+		124CB0C4BCF619FF55D320D8 /* StrainLabModelDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2017FC56B960212F56DDFA2 /* StrainLabModelDefinition.swift */; };
+		219D0B39AFF96B4FEDD816A7 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F70E00210FFAF5D198EDF /* DashboardViewModel.swift */; };
+		2EF411DE0CD13C5081D0839E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D200F0EFDD0F36DBED3B37 /* CoreDataManager.swift */; };
+		312E018591E5D662AB55EDB1 /* SleepScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD1E0C5A3F35E4DADDAAE6 /* SleepScoreCalculator.swift */; };
+		334AC48D3EFE1450C5A3BD62 /* RecoveryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25EA6D7477B383FA8355B1 /* RecoveryDetailView.swift */; };
+		3543101732FA89D90B7930A3 /* CDHRVSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50FE5765E48DC36863DC0F3 /* CDHRVSample.swift */; };
+		45948CE12D04963FC7E891AC /* ActiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4595E48EB65FE1F57DEAA7B7 /* ActiveWorkoutView.swift */; };
+		4A856D7352AD9B42A01A249D /* WorkoutSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BD307D73A1DE619DA5299A /* WorkoutSelectionView.swift */; };
+		4C158DF97D2F1BF17A2B35FB /* BaselineCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E43AB3DC4F79D3E46696C5 /* BaselineCalculator.swift */; };
+		4C752245141B1DC720636FDD /* ComponentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC466178063D0FB956981B8 /* ComponentCard.swift */; };
+		4F88415014625068DA54F0EA /* WorkoutSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B593F6E5B027F5EBF23F2FE /* WorkoutSessionManager.swift */; };
+		4F9DE460A075E57D249B49E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43C1E46D3CD933989062119 /* Assets.xcassets */; };
+		4FDC8742C265B9C89B2809A0 /* ScoreRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C1F27370CCE2487D347AD /* ScoreRing.swift */; };
+		5D0B6C82D78C1ADB68C0D4E9 /* RecoveryScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A77139EBDD0607DE84CAD /* RecoveryScoreCalculator.swift */; };
+		69A6D2A705D38A3B1B66E93F /* HRVProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824A3F0948A25DAFFA32149 /* HRVProcessor.swift */; };
+		6D57238B65B8763A56227E24 /* iOSHealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27F6F2397565374363B4EF /* iOSHealthKitManager.swift */; };
+		6D642DC7F5E07F7E14A03B6A /* CDHeartRateSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA861A6234DE8805455E57D3 /* CDHeartRateSample.swift */; };
+		82E91A734C5B3E4C1E547014 /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044DBAA1F8424A7004DED04 /* WatchHomeView.swift */; };
+		8BA69E34D8AE9677345E2523 /* StrainLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F11ACBEE7BC97C18CD8274 /* StrainLabApp.swift */; };
+		8BB2980CBF42DBC5C108F793 /* TrendChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE64964AEBA38022F3B246 /* TrendChart.swift */; };
+		8E48948C0E38C95DC27B3AEB /* CDUserBaseline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E07EA3557624F4922059 /* CDUserBaseline.swift */; };
+		9A2EFD7ED423915AF48A6C47 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B2194634F7E2DED93C52EC /* DashboardView.swift */; };
+		9F457C33433553017C243B2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55C57907D0C3D75619E66C /* ContentView.swift */; };
+		A4F56B71BC02295E5061D4A1 /* CDSleepScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23FD207A2627D3AE1D84186 /* CDSleepScore.swift */; };
+		B585429E63CD5AC53D1866C4 /* WatchHealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3221734D7694ACC2E73268 /* WatchHealthKitManager.swift */; };
+		B83F2B13EEFC7098DB9596B4 /* StrainLabWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8EF3E6E767DC289011702 /* StrainLabWatchApp.swift */; };
+		BB2C6AB8D38BA240223553C2 /* CDStrainScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E6AC048E4F5A2C0B77472 /* CDStrainScore.swift */; };
+		CA1A2F4FB6C1098DFBC5CB85 /* iOSConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA1E55DA979674DFB85609 /* iOSConnectivityManager.swift */; };
+		DBEF6654067CBAA5A80DF779 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1293327FEE6F8361E6D33 /* WatchConnectivityManager.swift */; };
+		E15FD4AE19A0BA1A282B3A2A /* StrainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CC3A787CF10C56B05CA1D /* StrainDetailView.swift */; };
+		E339FCE43F33540B69DB4294 /* StrainScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC64D5B81284F9053EBD71 /* StrainScoreCalculator.swift */; };
+		E7625DE9330449707072B0EF /* StrainLabKit in Frameworks */ = {isa = PBXBuildFile; productRef = 286BE67D2706E0588DBEB623 /* StrainLabKit */; };
+		EA07560D90E96AF483487DD2 /* StrainLabKit in Frameworks */ = {isa = PBXBuildFile; productRef = DB96DE1261F73C70F07E48DC /* StrainLabKit */; };
+		F0D3BED5A24140CB3E9168EB /* ScoreEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16DB57C406C0962ADB6DC3 /* ScoreEngine.swift */; };
+		F2496C0479591C910CE54055 /* SleepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1DD8FFA6C6713C93C86F1 /* SleepDetailView.swift */; };
+		F6921F4568B9A9908C15FD34 /* StrainLabTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4008AF3EA197C16C97178C6B /* StrainLabTheme.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09E73B22950E7714B2273BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0D4019C3555188672C854355 /* StrainLabWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrainLabWatch.entitlements; sourceTree = "<group>"; };
+		1AB1293327FEE6F8361E6D33 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
+		209E6AC048E4F5A2C0B77472 /* CDStrainScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStrainScore.swift; sourceTree = "<group>"; };
+		3292E07EA3557624F4922059 /* CDUserBaseline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUserBaseline.swift; sourceTree = "<group>"; };
+		4008AF3EA197C16C97178C6B /* StrainLabTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabTheme.swift; sourceTree = "<group>"; };
+		408F70E00210FFAF5D198EDF /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		4595E48EB65FE1F57DEAA7B7 /* ActiveWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutView.swift; sourceTree = "<group>"; };
+		4B593F6E5B027F5EBF23F2FE /* WorkoutSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionManager.swift; sourceTree = "<group>"; };
+		5C6E34B3E1521F8911151964 /* StrainLabKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = StrainLabKit; path = StrainLabKit; sourceTree = SOURCE_ROOT; };
+		645246D30DC0E07607CB6548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		65DA1E55DA979674DFB85609 /* iOSConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSConnectivityManager.swift; sourceTree = "<group>"; };
+		6F5A77139EBDD0607DE84CAD /* RecoveryScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryScoreCalculator.swift; sourceTree = "<group>"; };
+		737C1F27370CCE2487D347AD /* ScoreRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRing.swift; sourceTree = "<group>"; };
+		84BD1E0C5A3F35E4DADDAAE6 /* SleepScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepScoreCalculator.swift; sourceTree = "<group>"; };
+		8A3AC256649EF8ACF63387D5 /* StrainLab.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = StrainLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E46CC3B8A781F0F512AD0BE /* StrainLabWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrainLabWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		958CC3A787CF10C56B05CA1D /* StrainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainDetailView.swift; sourceTree = "<group>"; };
+		99B2194634F7E2DED93C52EC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		9F3221734D7694ACC2E73268 /* WatchHealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHealthKitManager.swift; sourceTree = "<group>"; };
+		A0E1DD8FFA6C6713C93C86F1 /* SleepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDetailView.swift; sourceTree = "<group>"; };
+		A2017FC56B960212F56DDFA2 /* StrainLabModelDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabModelDefinition.swift; sourceTree = "<group>"; };
+		A68543CCA73E06D66457488C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABCC64D5B81284F9053EBD71 /* StrainScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainScoreCalculator.swift; sourceTree = "<group>"; };
+		C0F11ACBEE7BC97C18CD8274 /* StrainLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabApp.swift; sourceTree = "<group>"; };
+		C43C1E46D3CD933989062119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8BD307D73A1DE619DA5299A /* WorkoutSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSelectionView.swift; sourceTree = "<group>"; };
+		C9AE64964AEBA38022F3B246 /* TrendChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendChart.swift; sourceTree = "<group>"; };
+		CBC466178063D0FB956981B8 /* ComponentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCard.swift; sourceTree = "<group>"; };
+		CC16DB57C406C0962ADB6DC3 /* ScoreEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEngine.swift; sourceTree = "<group>"; };
+		CE25EA6D7477B383FA8355B1 /* RecoveryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryDetailView.swift; sourceTree = "<group>"; };
+		D2D200F0EFDD0F36DBED3B37 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D50FE5765E48DC36863DC0F3 /* CDHRVSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHRVSample.swift; sourceTree = "<group>"; };
+		D6E43AB3DC4F79D3E46696C5 /* BaselineCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineCalculator.swift; sourceTree = "<group>"; };
+		D824A3F0948A25DAFFA32149 /* HRVProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRVProcessor.swift; sourceTree = "<group>"; };
+		DC27F6F2397565374363B4EF /* iOSHealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSHealthKitManager.swift; sourceTree = "<group>"; };
+		E044DBAA1F8424A7004DED04 /* WatchHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHomeView.swift; sourceTree = "<group>"; };
+		E41841DFAB82F4ED7314ED60 /* CDRecoveryScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDRecoveryScore.swift; sourceTree = "<group>"; };
+		E8C8EF3E6E767DC289011702 /* StrainLabWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabWatchApp.swift; sourceTree = "<group>"; };
+		F23FD207A2627D3AE1D84186 /* CDSleepScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSleepScore.swift; sourceTree = "<group>"; };
+		F38B54915D259F80045A505A /* StrainLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrainLab.entitlements; sourceTree = "<group>"; };
+		FA861A6234DE8805455E57D3 /* CDHeartRateSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHeartRateSample.swift; sourceTree = "<group>"; };
+		FE55C57907D0C3D75619E66C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0EB5F10510B2719235581DFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA07560D90E96AF483487DD2 /* StrainLabKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16D6F0A3612A48FE787AAA00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7625DE9330449707072B0EF /* StrainLabKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0ABA3F3F2A2CC9F221163C94 /* SharedUI */ = {
+			isa = PBXGroup;
+			children = (
+				353876499368A20B37535A0A /* Components */,
+				748F5C96EC9DBA09B809035B /* Theme */,
+			);
+			path = SharedUI;
+			sourceTree = "<group>";
+		};
+		0B53CB936E35832B9B81D278 /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				65DA1E55DA979674DFB85609 /* iOSConnectivityManager.swift */,
+			);
+			path = Connectivity;
+			sourceTree = "<group>";
+		};
+		176065CD4F1974ACD1C9EEBE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FA861A6234DE8805455E57D3 /* CDHeartRateSample.swift */,
+				D50FE5765E48DC36863DC0F3 /* CDHRVSample.swift */,
+				E41841DFAB82F4ED7314ED60 /* CDRecoveryScore.swift */,
+				F23FD207A2627D3AE1D84186 /* CDSleepScore.swift */,
+				209E6AC048E4F5A2C0B77472 /* CDStrainScore.swift */,
+				3292E07EA3557624F4922059 /* CDUserBaseline.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		25D14A5848AA6B45AE5E27EB /* StrainLabWatch */ = {
+			isa = PBXGroup;
+			children = (
+				A68543CCA73E06D66457488C /* Assets.xcassets */,
+				645246D30DC0E07607CB6548 /* Info.plist */,
+				0D4019C3555188672C854355 /* StrainLabWatch.entitlements */,
+				DB7F32295CDD21A4E4B8E94C /* App */,
+				3D5D82B7BE02E20F6548F82B /* DataCollection */,
+				303FC10A7E9A51E0465D66D8 /* WorkoutTracking */,
+			);
+			path = StrainLabWatch;
+			sourceTree = "<group>";
+		};
+		2C63DC019AEACD9CE00BE68A /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				5C6E34B3E1521F8911151964 /* StrainLabKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		303FC10A7E9A51E0465D66D8 /* WorkoutTracking */ = {
+			isa = PBXGroup;
+			children = (
+				4B593F6E5B027F5EBF23F2FE /* WorkoutSessionManager.swift */,
+			);
+			path = WorkoutTracking;
+			sourceTree = "<group>";
+		};
+		353876499368A20B37535A0A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CBC466178063D0FB956981B8 /* ComponentCard.swift */,
+				737C1F27370CCE2487D347AD /* ScoreRing.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3818815B1A9127F1BA1CF896 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B2A2797507C6E202EC3B582D /* Dashboard */,
+				76A4C4BE2E428CD0C5D6DB26 /* Recovery */,
+				4205CDE7528C81511D8C1EF2 /* Sleep */,
+				D895F228CE6F2B08B14E1768 /* Strain */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3D5D82B7BE02E20F6548F82B /* DataCollection */ = {
+			isa = PBXGroup;
+			children = (
+				1AB1293327FEE6F8361E6D33 /* WatchConnectivityManager.swift */,
+				9F3221734D7694ACC2E73268 /* WatchHealthKitManager.swift */,
+			);
+			path = DataCollection;
+			sourceTree = "<group>";
+		};
+		4205CDE7528C81511D8C1EF2 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				A0E1DD8FFA6C6713C93C86F1 /* SleepDetailView.swift */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		70015EA49407D3D52684E386 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				D2D200F0EFDD0F36DBED3B37 /* CoreDataManager.swift */,
+				A2017FC56B960212F56DDFA2 /* StrainLabModelDefinition.swift */,
+				176065CD4F1974ACD1C9EEBE /* Entities */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		73FF0F02EB7E190AF8BBFD2F = {
+			isa = PBXGroup;
+			children = (
+				2C63DC019AEACD9CE00BE68A /* Packages */,
+				8DBE9FE16D2D2357EC14135C /* StrainLab */,
+				25D14A5848AA6B45AE5E27EB /* StrainLabWatch */,
+				883979B25725C75EC348A1EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		748F5C96EC9DBA09B809035B /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				4008AF3EA197C16C97178C6B /* StrainLabTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		76A4C4BE2E428CD0C5D6DB26 /* Recovery */ = {
+			isa = PBXGroup;
+			children = (
+				CE25EA6D7477B383FA8355B1 /* RecoveryDetailView.swift */,
+			);
+			path = Recovery;
+			sourceTree = "<group>";
+		};
+		883979B25725C75EC348A1EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A3AC256649EF8ACF63387D5 /* StrainLab.app */,
+				8E46CC3B8A781F0F512AD0BE /* StrainLabWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DBE9FE16D2D2357EC14135C /* StrainLab */ = {
+			isa = PBXGroup;
+			children = (
+				C43C1E46D3CD933989062119 /* Assets.xcassets */,
+				09E73B22950E7714B2273BD5 /* Info.plist */,
+				F38B54915D259F80045A505A /* StrainLab.entitlements */,
+				D3BB32F57FD22160C73510D6 /* App */,
+				AE6C19F5C83D35045FE8ECB9 /* Core */,
+				3818815B1A9127F1BA1CF896 /* Features */,
+				0ABA3F3F2A2CC9F221163C94 /* SharedUI */,
+			);
+			path = StrainLab;
+			sourceTree = "<group>";
+		};
+		AE6C19F5C83D35045FE8ECB9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0B53CB936E35832B9B81D278 /* Connectivity */,
+				D0807F5F758F151388CF8E47 /* HealthKit */,
+				70015EA49407D3D52684E386 /* Persistence */,
+				B18B96EDDA6A3394CDA0EBC8 /* Processing */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B18B96EDDA6A3394CDA0EBC8 /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				D6E43AB3DC4F79D3E46696C5 /* BaselineCalculator.swift */,
+				D824A3F0948A25DAFFA32149 /* HRVProcessor.swift */,
+				6F5A77139EBDD0607DE84CAD /* RecoveryScoreCalculator.swift */,
+				CC16DB57C406C0962ADB6DC3 /* ScoreEngine.swift */,
+				84BD1E0C5A3F35E4DADDAAE6 /* SleepScoreCalculator.swift */,
+				ABCC64D5B81284F9053EBD71 /* StrainScoreCalculator.swift */,
+			);
+			path = Processing;
+			sourceTree = "<group>";
+		};
+		B2A2797507C6E202EC3B582D /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				99B2194634F7E2DED93C52EC /* DashboardView.swift */,
+				408F70E00210FFAF5D198EDF /* DashboardViewModel.swift */,
+				C9AE64964AEBA38022F3B246 /* TrendChart.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		B7BBE3BEC1267B101110FC86 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4595E48EB65FE1F57DEAA7B7 /* ActiveWorkoutView.swift */,
+				E044DBAA1F8424A7004DED04 /* WatchHomeView.swift */,
+				C8BD307D73A1DE619DA5299A /* WorkoutSelectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0807F5F758F151388CF8E47 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				DC27F6F2397565374363B4EF /* iOSHealthKitManager.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		D3BB32F57FD22160C73510D6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FE55C57907D0C3D75619E66C /* ContentView.swift */,
+				C0F11ACBEE7BC97C18CD8274 /* StrainLabApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D895F228CE6F2B08B14E1768 /* Strain */ = {
+			isa = PBXGroup;
+			children = (
+				958CC3A787CF10C56B05CA1D /* StrainDetailView.swift */,
+			);
+			path = Strain;
+			sourceTree = "<group>";
+		};
+		DB7F32295CDD21A4E4B8E94C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E8C8EF3E6E767DC289011702 /* StrainLabWatchApp.swift */,
+				B7BBE3BEC1267B101110FC86 /* Views */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9531993A0FDA00A7607DBDD9 /* StrainLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82FE6DDE9B35CCCC8CCB0C87 /* Build configuration list for PBXNativeTarget "StrainLab" */;
+			buildPhases = (
+				4A2A97ABC6D98EDB14353C40 /* Sources */,
+				614EA04ED753627DE0CA24D1 /* Resources */,
+				16D6F0A3612A48FE787AAA00 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StrainLab;
+			packageProductDependencies = (
+				286BE67D2706E0588DBEB623 /* StrainLabKit */,
+			);
+			productName = StrainLab;
+			productReference = 8A3AC256649EF8ACF63387D5 /* StrainLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C841CFB3A041AC095E514A06 /* StrainLabWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D39188D508E35E2E2500C7F8 /* Build configuration list for PBXNativeTarget "StrainLabWatch" */;
+			buildPhases = (
+				FB27FDD4CCCD5B81B0267D8F /* Sources */,
+				C1205F3F87A6095031F910D7 /* Resources */,
+				0EB5F10510B2719235581DFC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StrainLabWatch;
+			packageProductDependencies = (
+				DB96DE1261F73C70F07E48DC /* StrainLabKit */,
+			);
+			productName = StrainLabWatch;
+			productReference = 8E46CC3B8A781F0F512AD0BE /* StrainLabWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BA5612B11F11D8C7D2B6A65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 1AB4EC72118CD12251FD0866 /* Build configuration list for PBXProject "StrainLab" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 73FF0F02EB7E190AF8BBFD2F;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F6A142C44C7367EA43ABC7D2 /* XCLocalSwiftPackageReference "StrainLabKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9531993A0FDA00A7607DBDD9 /* StrainLab */,
+				C841CFB3A041AC095E514A06 /* StrainLabWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		614EA04ED753627DE0CA24D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F9DE460A075E57D249B49E0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1205F3F87A6095031F910D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B83B24C642FC9B3C639D788 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A2A97ABC6D98EDB14353C40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C158DF97D2F1BF17A2B35FB /* BaselineCalculator.swift in Sources */,
+				3543101732FA89D90B7930A3 /* CDHRVSample.swift in Sources */,
+				6D642DC7F5E07F7E14A03B6A /* CDHeartRateSample.swift in Sources */,
+				03F724270FB344329654008D /* CDRecoveryScore.swift in Sources */,
+				A4F56B71BC02295E5061D4A1 /* CDSleepScore.swift in Sources */,
+				BB2C6AB8D38BA240223553C2 /* CDStrainScore.swift in Sources */,
+				8E48948C0E38C95DC27B3AEB /* CDUserBaseline.swift in Sources */,
+				4C752245141B1DC720636FDD /* ComponentCard.swift in Sources */,
+				9F457C33433553017C243B2C /* ContentView.swift in Sources */,
+				2EF411DE0CD13C5081D0839E /* CoreDataManager.swift in Sources */,
+				9A2EFD7ED423915AF48A6C47 /* DashboardView.swift in Sources */,
+				219D0B39AFF96B4FEDD816A7 /* DashboardViewModel.swift in Sources */,
+				69A6D2A705D38A3B1B66E93F /* HRVProcessor.swift in Sources */,
+				334AC48D3EFE1450C5A3BD62 /* RecoveryDetailView.swift in Sources */,
+				5D0B6C82D78C1ADB68C0D4E9 /* RecoveryScoreCalculator.swift in Sources */,
+				F0D3BED5A24140CB3E9168EB /* ScoreEngine.swift in Sources */,
+				4FDC8742C265B9C89B2809A0 /* ScoreRing.swift in Sources */,
+				F2496C0479591C910CE54055 /* SleepDetailView.swift in Sources */,
+				312E018591E5D662AB55EDB1 /* SleepScoreCalculator.swift in Sources */,
+				E15FD4AE19A0BA1A282B3A2A /* StrainDetailView.swift in Sources */,
+				8BA69E34D8AE9677345E2523 /* StrainLabApp.swift in Sources */,
+				124CB0C4BCF619FF55D320D8 /* StrainLabModelDefinition.swift in Sources */,
+				F6921F4568B9A9908C15FD34 /* StrainLabTheme.swift in Sources */,
+				E339FCE43F33540B69DB4294 /* StrainScoreCalculator.swift in Sources */,
+				8BB2980CBF42DBC5C108F793 /* TrendChart.swift in Sources */,
+				CA1A2F4FB6C1098DFBC5CB85 /* iOSConnectivityManager.swift in Sources */,
+				6D57238B65B8763A56227E24 /* iOSHealthKitManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB27FDD4CCCD5B81B0267D8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45948CE12D04963FC7E891AC /* ActiveWorkoutView.swift in Sources */,
+				B83F2B13EEFC7098DB9596B4 /* StrainLabWatchApp.swift in Sources */,
+				DBEF6654067CBAA5A80DF779 /* WatchConnectivityManager.swift in Sources */,
+				B585429E63CD5AC53D1866C4 /* WatchHealthKitManager.swift in Sources */,
+				82E91A734C5B3E4C1E547014 /* WatchHomeView.swift in Sources */,
+				4A856D7352AD9B42A01A249D /* WorkoutSelectionView.swift in Sources */,
+				4F88415014625068DA54F0EA /* WorkoutSessionManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		39AF80D2CF1C87EBA369957D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StrainLab/StrainLab.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = StrainLab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strainlab.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4A2ED8E4585246E15C25DF49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		54C998428304AB1D89D6B3DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StrainLabWatch/StrainLabWatch.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = StrainLabWatch/Info.plist;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strainlab.app.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		5B4AF1C62B23572DE8793FFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StrainLabWatch/StrainLabWatch.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = StrainLabWatch/Info.plist;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strainlab.app.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		8A19B6BBBC17C5F85DEA2AFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StrainLab/StrainLab.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = StrainLab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strainlab.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		91BC61CD3DC3BB6A37839831 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AB4EC72118CD12251FD0866 /* Build configuration list for PBXProject "StrainLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A2ED8E4585246E15C25DF49 /* Debug */,
+				91BC61CD3DC3BB6A37839831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		82FE6DDE9B35CCCC8CCB0C87 /* Build configuration list for PBXNativeTarget "StrainLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A19B6BBBC17C5F85DEA2AFE /* Debug */,
+				39AF80D2CF1C87EBA369957D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D39188D508E35E2E2500C7F8 /* Build configuration list for PBXNativeTarget "StrainLabWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B4AF1C62B23572DE8793FFA /* Debug */,
+				54C998428304AB1D89D6B3DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F6A142C44C7367EA43ABC7D2 /* XCLocalSwiftPackageReference "StrainLabKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = StrainLabKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		286BE67D2706E0588DBEB623 /* StrainLabKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StrainLabKit;
+		};
+		DB96DE1261F73C70F07E48DC /* StrainLabKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StrainLabKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7BA5612B11F11D8C7D2B6A65 /* Project object */;
+}
