@@ -12,12 +12,10 @@ struct DashboardView: View {
                 VStack(spacing: StrainLabTheme.paddingL) {
                     periodPicker
 
-                    scoreCardsSection
-
-                    sleepSection
-
-                    if selectedPeriod == .week {
-                        trendsSection
+                    if selectedPeriod == .today {
+                        todayView
+                    } else {
+                        weekView
                     }
                 }
                 .padding(.horizontal, StrainLabTheme.paddingM)
@@ -31,6 +29,57 @@ struct DashboardView: View {
         }
         .task {
             await viewModel.loadData()
+        }
+    }
+
+    // MARK: - Today View (Daily Readiness Dashboard)
+
+    private var todayView: some View {
+        VStack(spacing: StrainLabTheme.paddingM) {
+            // Natural language insight at top
+            if let insight = viewModel.dailyInsight {
+                InsightCardView(insight: insight)
+            }
+
+            // Hero Recovery Card (primary metric)
+            NavigationLink {
+                RecoveryDetailView(score: viewModel.recoveryScore)
+            } label: {
+                HeroRecoveryCard(score: viewModel.recoveryScore) {}
+            }
+            .buttonStyle(.plain)
+
+            // Secondary metrics: Strain and Sleep side by side
+            HStack(spacing: StrainLabTheme.paddingM) {
+                NavigationLink {
+                    StrainDetailView(score: viewModel.strainScore)
+                } label: {
+                    CompactStrainCard(score: viewModel.strainScore)
+                }
+                .buttonStyle(.plain)
+
+                NavigationLink {
+                    SleepDetailView(score: viewModel.sleepScore)
+                } label: {
+                    CompactSleepCard(score: viewModel.sleepScore)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+
+    // MARK: - Week View (Trends)
+
+    private var weekView: some View {
+        VStack(spacing: StrainLabTheme.paddingL) {
+            // Score cards in original layout for week view
+            scoreCardsSection
+
+            sleepSection
+
+            if !viewModel.weeklyTrends.isEmpty {
+                TrendChart(data: viewModel.weeklyTrends)
+            }
         }
     }
 
@@ -69,14 +118,100 @@ struct DashboardView: View {
         }
         .buttonStyle(.plain)
     }
+}
 
-    @ViewBuilder
-    private var trendsSection: some View {
-        if !viewModel.weeklyTrends.isEmpty {
-            TrendChart(data: viewModel.weeklyTrends)
+// MARK: - Compact Cards for Today View
+
+struct CompactStrainCard: View {
+    let score: StrainScore?
+
+    var body: some View {
+        VStack(spacing: StrainLabTheme.paddingS) {
+            HStack {
+                Text("STRAIN")
+                    .font(StrainLabTheme.labelFont)
+                    .foregroundStyle(StrainLabTheme.textTertiary)
+                Spacer()
+            }
+
+            if let score = score {
+                HStack(spacing: StrainLabTheme.paddingS) {
+                    StrainRing(score: score.score)
+                        .frame(width: 60, height: 60)
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(score.category.displayName)
+                            .font(StrainLabTheme.captionFont)
+                            .foregroundStyle(StrainLabTheme.strainBlue)
+
+                        Text("\(Int(score.components.activityMinutes)) min")
+                            .font(StrainLabTheme.captionFont)
+                            .foregroundStyle(StrainLabTheme.textSecondary)
+                    }
+
+                    Spacer()
+                }
+            } else {
+                HStack {
+                    ProgressView()
+                        .frame(width: 60, height: 60)
+                    Spacer()
+                }
+            }
         }
+        .frame(maxWidth: .infinity)
+        .strainLabCard()
     }
 }
+
+struct CompactSleepCard: View {
+    let score: SleepScore?
+
+    var body: some View {
+        VStack(spacing: StrainLabTheme.paddingS) {
+            HStack {
+                Text("SLEEP")
+                    .font(StrainLabTheme.labelFont)
+                    .foregroundStyle(StrainLabTheme.textTertiary)
+                Spacer()
+            }
+
+            if let score = score {
+                HStack(spacing: StrainLabTheme.paddingS) {
+                    ScoreRing(
+                        score: score.score,
+                        color: StrainLabTheme.sleepPurple,
+                        lineWidth: 6,
+                        showLabel: true
+                    )
+                    .frame(width: 60, height: 60)
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(score.components.formattedDuration)
+                            .font(StrainLabTheme.captionFont)
+                            .foregroundStyle(StrainLabTheme.sleepPurple)
+
+                        Text("\(Int(score.components.efficiency * 100))% eff")
+                            .font(StrainLabTheme.captionFont)
+                            .foregroundStyle(StrainLabTheme.textSecondary)
+                    }
+
+                    Spacer()
+                }
+            } else {
+                HStack {
+                    ProgressView()
+                        .frame(width: 60, height: 60)
+                    Spacer()
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .strainLabCard()
+    }
+}
+
+// MARK: - Original Cards (kept for Week view)
 
 struct RecoveryCard: View {
     let score: RecoveryScore?

@@ -6,11 +6,14 @@ final class DashboardViewModel: ObservableObject {
     @Published var recoveryScore: RecoveryScore?
     @Published var strainScore: StrainScore?
     @Published var sleepScore: SleepScore?
+    @Published var previousDayStrain: StrainScore?
+    @Published var dailyInsight: DailyInsight?
     @Published var weeklyTrends: [DailyTrend] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
 
     private var scoreEngine: ScoreEngine?
+    private let insightGenerator = InsightGenerator()
 
     init() {}
 
@@ -42,9 +45,23 @@ final class DashboardViewModel: ObservableObject {
                 strain: trendData.strain,
                 sleep: trendData.sleep
             )
+
+            // Get previous day strain for insight generation
+            previousDayStrain = trendData.strain.first {
+                Calendar.current.isDate($0.date, inSameDayAs: Date().daysAgo(1))
+            }
+
+            // Generate daily insight
+            dailyInsight = await insightGenerator.generateInsight(
+                recovery: rec,
+                strain: str,
+                sleep: slp,
+                previousDayStrain: previousDayStrain
+            )
         } catch {
             errorMessage = error.localizedDescription
-            loadMockData()
+            // Show no data insight when there's an error
+            dailyInsight = .noData
         }
 
         isLoading = false
@@ -79,60 +96,6 @@ final class DashboardViewModel: ObservableObject {
         }
 
         return trends
-    }
-
-    private func loadMockData() {
-        recoveryScore = RecoveryScore(
-            date: Date(),
-            score: 72,
-            category: .optimal,
-            components: RecoveryScore.Components(
-                hrvDeviation: 8.5,
-                rhrDeviation: -2.1,
-                sleepQuality: 78,
-                hrvBaseline: 48,
-                rhrBaseline: 58,
-                currentHRV: 52,
-                currentRHR: 57
-            )
-        )
-
-        strainScore = StrainScore(
-            date: Date(),
-            score: 11.2,
-            category: .moderate,
-            components: StrainScore.Components(
-                activityMinutes: 45,
-                zoneMinutes: StrainScore.Components.ZoneMinutes(
-                    zone1: 10, zone2: 15, zone3: 12, zone4: 6, zone5: 2
-                ),
-                workoutContributions: []
-            )
-        )
-
-        sleepScore = SleepScore(
-            date: Date(),
-            score: 82,
-            components: SleepScore.Components(
-                durationScore: 88,
-                efficiencyScore: 85,
-                stageScore: 72,
-                totalDurationMinutes: 432,
-                sleepNeedMinutes: 450,
-                efficiency: 0.91,
-                deepSleepMinutes: 62,
-                remSleepMinutes: 85
-            )
-        )
-
-        weeklyTrends = (0..<7).reversed().map { daysAgo in
-            DailyTrend(
-                date: Date().daysAgo(daysAgo),
-                recoveryScore: Double.random(in: 55...85),
-                strainScore: Double.random(in: 8...16),
-                sleepScore: Double.random(in: 60...90)
-            )
-        }
     }
 }
 
