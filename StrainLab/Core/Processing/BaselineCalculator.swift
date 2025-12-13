@@ -5,6 +5,82 @@ public struct BaselineCalculator: BaselineCalculating, Sendable {
 
     public init() {}
 
+    // MARK: - Adaptive Baseline Calculation
+
+    /// Calculate adaptive baseline using weighted multi-window approach
+    /// Recent data is weighted more heavily than older data
+    public func calculateAdaptiveBaseline(values: [Double]) -> AdaptiveBaseline {
+        guard !values.isEmpty else {
+            return AdaptiveBaseline(value: 0, confidence: 0, phase: .initial)
+        }
+
+        let daysAvailable = values.count
+        let phase = determineBaselinePhase(daysAvailable: daysAvailable)
+
+        switch phase {
+        case .initial:
+            // Days 1-6: Simple average of available data
+            let avg = values.reduce(0, +) / Double(values.count)
+            let confidence = Double(daysAvailable) / 7.0
+            return AdaptiveBaseline(value: avg, confidence: confidence, phase: phase)
+
+        case .calibrating:
+            // Days 7-13: 7-day weighted average
+            let baseline = calculateWeightedAverage(values: Array(values.suffix(7)))
+            let confidence = 0.5 + (Double(daysAvailable - 7) / 14.0)
+            return AdaptiveBaseline(value: baseline, confidence: min(confidence, 0.7), phase: phase)
+
+        case .established:
+            // Days 14-27: Blend of 7-day and 14-day with recent bias
+            let recent7 = calculateWeightedAverage(values: Array(values.suffix(7)))
+            let recent14 = calculateWeightedAverage(values: Array(values.suffix(14)))
+            let blended = recent7 * 0.6 + recent14 * 0.4
+            let confidence = 0.7 + (Double(daysAvailable - 14) / 56.0)
+            return AdaptiveBaseline(value: blended, confidence: min(confidence, 0.85), phase: phase)
+
+        case .refined, .mature:
+            // Days 28+: Full multi-window weighted baseline
+            let recent7 = calculateWeightedAverage(values: Array(values.suffix(7)))
+            let recent14 = calculateWeightedAverage(values: Array(values.suffix(14)))
+            let recent28 = calculateWeightedAverage(values: Array(values.suffix(28)))
+            // Weight: 50% recent week, 30% 2-week, 20% 4-week
+            let blended = recent7 * 0.5 + recent14 * 0.3 + recent28 * 0.2
+            return AdaptiveBaseline(value: blended, confidence: 0.95, phase: .mature)
+        }
+    }
+
+    /// Calculate weighted average with exponential decay (recent = higher weight)
+    public func calculateWeightedAverage(values: [Double]) -> Double {
+        guard !values.isEmpty else { return 0 }
+
+        // Exponential decay: most recent value has highest weight
+        let decayFactor = 0.9
+        var weights: [Double] = []
+        var weight = 1.0
+
+        for _ in 0..<values.count {
+            weights.insert(weight, at: 0)
+            weight *= decayFactor
+        }
+
+        let totalWeight = weights.reduce(0, +)
+        let weightedSum = zip(values, weights).map { $0 * $1 }.reduce(0, +)
+
+        return weightedSum / totalWeight
+    }
+
+    private func determineBaselinePhase(daysAvailable: Int) -> BaselinePhase {
+        switch daysAvailable {
+        case 0...6: return .initial
+        case 7...13: return .calibrating
+        case 14...27: return .established
+        case 28...59: return .refined
+        default: return .mature
+        }
+    }
+
+    // MARK: - Simple Rolling Average (legacy support)
+
     /// Calculate rolling average over specified number of days
     /// Takes the most recent N values for the calculation
     public func calculateRollingAverage(values: [Double], days: Int) -> Double {
@@ -118,7 +194,29 @@ public struct BaselineCalculator: BaselineCalculating, Sendable {
     ) -> Bool {
         guard values.count >= minimumDays else { return false }
 
-        let cv = calculateCoefficientOfVariation(values)
+        let cv = calculateCoefficientOfVariation(values: values)
         return cv <= maxCoefficientOfVariation
     }
+}
+
+// MARK: - Supporting Types
+
+public struct AdaptiveBaseline: Sendable, Equatable {
+    public let value: Double
+    public let confidence: Double // 0-1
+    public let phase: BaselinePhase
+
+    public var isReliable: Bool {
+        confidence >= 0.7
+    }
+}
+
+public enum BaselinePhase: String, Sendable {
+    case initial = "Getting started"
+    case calibrating = "Calibrating"
+    case established = "Established"
+    case refined = "Refined"
+    case mature = "Personalized"
+
+    public var displayName: String { rawValue }
 }
