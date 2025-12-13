@@ -47,6 +47,9 @@ public final class WatchDataStore: @unchecked Sendable {
 
     public func saveRecoveryScore(_ score: RecoveryScore) {
         save(score, forKey: Keys.recoveryScore)
+        // Also save in complication-friendly format
+        defaults.set(score.score, forKey: "watch.score.recovery.value")
+        defaults.set(score.category.rawValue, forKey: "watch.score.recovery.category")
     }
 
     public func getRecoveryScore() -> RecoveryScore? {
@@ -55,6 +58,8 @@ public final class WatchDataStore: @unchecked Sendable {
 
     public func saveStrainScore(_ score: StrainScore) {
         save(score, forKey: Keys.strainScore)
+        // Also save in complication-friendly format
+        defaults.set(score.score, forKey: "watch.score.strain.value")
     }
 
     public func getStrainScore() -> StrainScore? {
@@ -83,6 +88,9 @@ public final class WatchDataStore: @unchecked Sendable {
 
     public func saveStrainGuidance(_ guidance: StrainGuidance) {
         save(guidance, forKey: Keys.strainGuidance)
+        // Also save in complication-friendly format
+        defaults.set(guidance.recommendedRange.lowerBound, forKey: "watch.guidance.target.lower")
+        defaults.set(guidance.recommendedRange.upperBound, forKey: "watch.guidance.target.upper")
     }
 
     public func getStrainGuidance() -> StrainGuidance? {
