@@ -42,7 +42,7 @@ struct SleepDetailWatchView: View {
                     .font(WatchTheme.headlineFont)
                     .foregroundStyle(WatchTheme.sleepPurple)
 
-                Text(score?.category.displayName ?? "Loading")
+                Text(score?.category ?? "Loading")
                     .font(WatchTheme.captionFont)
                     .foregroundStyle(WatchTheme.textSecondary)
             }
@@ -139,9 +139,8 @@ struct SleepDetailWatchView: View {
     NavigationStack {
         SleepDetailWatchView(
             score: SleepScore(
-                score: 85,
-                category: .excellent,
                 date: Date(),
+                score: 85,
                 components: SleepScore.Components(
                     durationScore: 90,
                     efficiencyScore: 85,
@@ -154,13 +153,13 @@ struct SleepDetailWatchView: View {
                 )
             ),
             history: [
-                SleepScore(score: 70, category: .good, date: Date().addingTimeInterval(-6*24*60*60), components: .init(durationScore: 75, efficiencyScore: 70, stageScore: 65, totalDurationMinutes: 390, sleepNeedMinutes: 450, efficiency: 0.88, deepSleepMinutes: 60, remSleepMinutes: 80)),
-                SleepScore(score: 82, category: .good, date: Date().addingTimeInterval(-5*24*60*60), components: .init(durationScore: 85, efficiencyScore: 82, stageScore: 79, totalDurationMinutes: 420, sleepNeedMinutes: 450, efficiency: 0.90, deepSleepMinutes: 75, remSleepMinutes: 95)),
-                SleepScore(score: 75, category: .good, date: Date().addingTimeInterval(-4*24*60*60), components: .init(durationScore: 78, efficiencyScore: 75, stageScore: 72, totalDurationMinutes: 400, sleepNeedMinutes: 450, efficiency: 0.87, deepSleepMinutes: 65, remSleepMinutes: 85)),
-                SleepScore(score: 88, category: .excellent, date: Date().addingTimeInterval(-3*24*60*60), components: .init(durationScore: 92, efficiencyScore: 88, stageScore: 84, totalDurationMinutes: 450, sleepNeedMinutes: 450, efficiency: 0.93, deepSleepMinutes: 85, remSleepMinutes: 105)),
-                SleepScore(score: 78, category: .good, date: Date().addingTimeInterval(-2*24*60*60), components: .init(durationScore: 80, efficiencyScore: 78, stageScore: 76, totalDurationMinutes: 410, sleepNeedMinutes: 450, efficiency: 0.89, deepSleepMinutes: 70, remSleepMinutes: 90)),
-                SleepScore(score: 90, category: .excellent, date: Date().addingTimeInterval(-1*24*60*60), components: .init(durationScore: 95, efficiencyScore: 90, stageScore: 85, totalDurationMinutes: 460, sleepNeedMinutes: 450, efficiency: 0.94, deepSleepMinutes: 90, remSleepMinutes: 110)),
-                SleepScore(score: 85, category: .excellent, date: Date(), components: .init(durationScore: 90, efficiencyScore: 85, stageScore: 80, totalDurationMinutes: 440, sleepNeedMinutes: 450, efficiency: 0.92, deepSleepMinutes: 80, remSleepMinutes: 100))
+                SleepScore(date: Date().addingTimeInterval(-6*24*60*60), score: 70, components: .init(durationScore: 75, efficiencyScore: 70, stageScore: 65, totalDurationMinutes: 390, sleepNeedMinutes: 450, efficiency: 0.88, deepSleepMinutes: 60, remSleepMinutes: 80)),
+                SleepScore(date: Date().addingTimeInterval(-5*24*60*60), score: 82, components: .init(durationScore: 85, efficiencyScore: 82, stageScore: 79, totalDurationMinutes: 420, sleepNeedMinutes: 450, efficiency: 0.90, deepSleepMinutes: 75, remSleepMinutes: 95)),
+                SleepScore(date: Date().addingTimeInterval(-4*24*60*60), score: 75, components: .init(durationScore: 78, efficiencyScore: 75, stageScore: 72, totalDurationMinutes: 400, sleepNeedMinutes: 450, efficiency: 0.87, deepSleepMinutes: 65, remSleepMinutes: 85)),
+                SleepScore(date: Date().addingTimeInterval(-3*24*60*60), score: 88, components: .init(durationScore: 92, efficiencyScore: 88, stageScore: 84, totalDurationMinutes: 450, sleepNeedMinutes: 450, efficiency: 0.93, deepSleepMinutes: 85, remSleepMinutes: 105)),
+                SleepScore(date: Date().addingTimeInterval(-2*24*60*60), score: 78, components: .init(durationScore: 80, efficiencyScore: 78, stageScore: 76, totalDurationMinutes: 410, sleepNeedMinutes: 450, efficiency: 0.89, deepSleepMinutes: 70, remSleepMinutes: 90)),
+                SleepScore(date: Date().addingTimeInterval(-1*24*60*60), score: 90, components: .init(durationScore: 95, efficiencyScore: 90, stageScore: 85, totalDurationMinutes: 460, sleepNeedMinutes: 450, efficiency: 0.94, deepSleepMinutes: 90, remSleepMinutes: 110)),
+                SleepScore(date: Date(), score: 85, components: .init(durationScore: 90, efficiencyScore: 85, stageScore: 80, totalDurationMinutes: 440, sleepNeedMinutes: 450, efficiency: 0.92, deepSleepMinutes: 80, remSleepMinutes: 100))
             ]
         )
     }

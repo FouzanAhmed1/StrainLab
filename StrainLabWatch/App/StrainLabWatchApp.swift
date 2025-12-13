@@ -3,10 +3,15 @@ import HealthKit
 
 @main
 struct StrainLabWatchApp: App {
+    @WKApplicationDelegateAdaptor(WatchAppDelegate.self) var appDelegate
+
     @State private var healthKitManager = WatchHealthKitManager()
     @State private var scoreEngine = WatchScoreEngine.shared
     @StateObject private var workoutManager = WorkoutSessionManager()
     @StateObject private var connectivityManager = WatchConnectivityManager.shared
+
+    private let backgroundManager = WatchBackgroundManager.shared
+    private let notificationManager = WatchNotificationManager.shared
 
     var body: some Scene {
         WindowGroup {
@@ -31,10 +36,21 @@ struct StrainLabWatchApp: App {
             print("HealthKit authorization failed: \(error)")
         }
 
-        // 2. Load cached scores
+        // 2. Request notification authorization
+        _ = await notificationManager.requestAuthorization()
+        notificationManager.setNotificationsEnabled(true)
+
+        // 3. Configure background manager with dependencies
+        backgroundManager.configure(
+            healthKitManager: healthKitManager,
+            scoreEngine: scoreEngine,
+            connectivityManager: connectivityManager
+        )
+
+        // 4. Load cached scores
         await scoreEngine.loadCachedScores()
 
-        // 3. Request sync from iPhone
+        // 5. Request sync from iPhone
         connectivityManager.requestSync()
     }
 }

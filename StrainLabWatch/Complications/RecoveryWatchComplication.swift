@@ -248,13 +248,13 @@ struct InlineView: View {
 #Preview("Circular", as: .accessoryCircular) {
     RecoveryWatchComplication()
 } timeline: {
-    RecoveryComplicationEntry(date: .now, recoveryScore: 78, category: .optimal, shortInsight: "Ready to push")
-    RecoveryComplicationEntry(date: .now, recoveryScore: 55, category: .moderate, shortInsight: "Take it easy")
-    RecoveryComplicationEntry(date: .now, recoveryScore: 28, category: .poor, shortInsight: "Rest today")
+    RecoveryComplicationEntry(date: Date(), recoveryScore: 78, category: ComplicationRecoveryCategory.optimal, shortInsight: "Ready to push")
+    RecoveryComplicationEntry(date: Date(), recoveryScore: 55, category: ComplicationRecoveryCategory.moderate, shortInsight: "Take it easy")
+    RecoveryComplicationEntry(date: Date(), recoveryScore: 28, category: ComplicationRecoveryCategory.poor, shortInsight: "Rest today")
 }
 
 #Preview("Rectangular", as: .accessoryRectangular) {
     RecoveryWatchComplication()
 } timeline: {
-    RecoveryComplicationEntry(date: .now, recoveryScore: 78, category: .optimal, shortInsight: "Ready to push")
+    RecoveryComplicationEntry(date: Date(), recoveryScore: 78, category: ComplicationRecoveryCategory.optimal, shortInsight: "Ready to push")
 }

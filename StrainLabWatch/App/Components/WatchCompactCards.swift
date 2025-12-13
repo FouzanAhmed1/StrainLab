@@ -160,12 +160,12 @@ struct WatchMetricRow: View {
             HStack(spacing: 8) {
                 WatchCompactStrainCard(
                     score: StrainScore(
+                        date: Date(),
                         score: 12.5,
                         category: .moderate,
-                        date: Date(),
                         components: StrainScore.Components(
                             activityMinutes: 45,
-                            zoneMinutes: StrainScore.ZoneMinutes(zone1: 10, zone2: 15, zone3: 10, zone4: 5, zone5: 2),
+                            zoneMinutes: StrainScore.Components.ZoneMinutes(zone1: 10, zone2: 15, zone3: 10, zone4: 5, zone5: 2),
                             workoutContributions: []
                         )
                     ),
@@ -174,9 +174,8 @@ struct WatchMetricRow: View {
 
                 WatchCompactSleepCard(
                     score: SleepScore(
-                        score: 85,
-                        category: .excellent,
                         date: Date(),
+                        score: 85,
                         components: SleepScore.Components(
                             durationScore: 90,
                             efficiencyScore: 85,

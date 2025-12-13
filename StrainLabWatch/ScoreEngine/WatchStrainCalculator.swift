@@ -20,12 +20,12 @@ public struct WatchStrainCalculator: Sendable {
     ) -> StrainScore {
         guard !heartRateSamples.isEmpty else {
             return StrainScore(
+                date: Date(),
                 score: 0,
                 category: .light,
-                date: Date(),
                 components: StrainScore.Components(
                     activityMinutes: 0,
-                    zoneMinutes: StrainScore.ZoneMinutes(zone1: 0, zone2: 0, zone3: 0, zone4: 0, zone5: 0),
+                    zoneMinutes: StrainScore.Components.ZoneMinutes(zone1: 0, zone2: 0, zone3: 0, zone4: 0, zone5: 0),
                     workoutContributions: []
                 )
             )
@@ -47,9 +47,9 @@ public struct WatchStrainCalculator: Sendable {
         let category = categorizeStrain(strain)
 
         return StrainScore(
+            date: Date(),
             score: strain,
             category: category,
-            date: Date(),
             components: StrainScore.Components(
                 activityMinutes: activityMinutes,
                 zoneMinutes: zoneMinutes,
@@ -73,7 +73,7 @@ public struct WatchStrainCalculator: Sendable {
     private func calculateZoneMinutes(
         samples: [HeartRateSample],
         maxHR: Double
-    ) -> StrainScore.ZoneMinutes {
+    ) -> StrainScore.Components.ZoneMinutes {
         var zone1: Double = 0
         var zone2: Double = 0
         var zone3: Double = 0
@@ -111,7 +111,7 @@ public struct WatchStrainCalculator: Sendable {
             // Below zone 1 doesn't contribute
         }
 
-        return StrainScore.ZoneMinutes(
+        return StrainScore.Components.ZoneMinutes(
             zone1: zone1,
             zone2: zone2,
             zone3: zone3,
@@ -120,7 +120,7 @@ public struct WatchStrainCalculator: Sendable {
         )
     }
 
-    private func calculateRawStrain(zoneMinutes: StrainScore.ZoneMinutes) -> Double {
+    private func calculateRawStrain(zoneMinutes: StrainScore.Components.ZoneMinutes) -> Double {
         return (zoneMinutes.zone1 * zoneWeights[0]) +
                (zoneMinutes.zone2 * zoneWeights[1]) +
                (zoneMinutes.zone3 * zoneWeights[2]) +

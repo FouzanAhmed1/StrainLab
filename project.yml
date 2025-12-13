@@ -106,6 +106,12 @@ targets:
         NSMotionUsageDescription: "StrainLab uses motion data to detect activity levels during workouts."
         WKApplication: true
         WKCompanionAppBundleIdentifier: com.strainlab.app
+        WKBackgroundModes:
+          - self-care
+          - workout-processing
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.strainlab.watch.refresh
+          - com.strainlab.watch.sync
 
 schemes:
   StrainLab:

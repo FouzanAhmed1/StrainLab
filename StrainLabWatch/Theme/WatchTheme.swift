@@ -108,13 +108,6 @@ public extension StrainScore.Category {
     }
 }
 
-// MARK: - Sleep Category Color Extension
-
-public extension SleepScore.Category {
-    var watchColor: Color {
-        return WatchTheme.sleepPurple
-    }
-}
 
 // MARK: - View Modifiers
 

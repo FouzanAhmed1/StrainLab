@@ -100,31 +100,25 @@ struct RecoveryDetailWatchView: View {
 // MARK: - Preview
 
 #Preview("Recovery Detail") {
-    NavigationStack {
+    let components = RecoveryScore.Components(
+        hrvDeviation: 12,
+        rhrDeviation: -2,
+        sleepQuality: 85,
+        hrvBaseline: 48,
+        rhrBaseline: 57,
+        currentHRV: 54,
+        currentRHR: 56
+    )
+
+    return NavigationStack {
         RecoveryDetailWatchView(
             score: RecoveryScore(
+                date: Date(),
                 score: 78,
                 category: .optimal,
-                date: Date(),
-                components: RecoveryScore.Components(
-                    hrvDeviation: 12,
-                    rhrDeviation: -2,
-                    sleepQuality: 85,
-                    currentHRV: 54,
-                    currentRHR: 56,
-                    baselineHRV: 48,
-                    baselineRHR: 57
-                )
+                components: components
             ),
-            history: [
-                RecoveryScore(score: 65, category: .moderate, date: Date().addingTimeInterval(-6*24*60*60), components: .init(hrvDeviation: 0, rhrDeviation: 0, sleepQuality: 70, currentHRV: 48, currentRHR: 57, baselineHRV: 48, baselineRHR: 57)),
-                RecoveryScore(score: 72, category: .optimal, date: Date().addingTimeInterval(-5*24*60*60), components: .init(hrvDeviation: 5, rhrDeviation: -1, sleepQuality: 75, currentHRV: 50, currentRHR: 56, baselineHRV: 48, baselineRHR: 57)),
-                RecoveryScore(score: 68, category: .optimal, date: Date().addingTimeInterval(-4*24*60*60), components: .init(hrvDeviation: 3, rhrDeviation: 2, sleepQuality: 70, currentHRV: 49, currentRHR: 58, baselineHRV: 48, baselineRHR: 57)),
-                RecoveryScore(score: 75, category: .optimal, date: Date().addingTimeInterval(-3*24*60*60), components: .init(hrvDeviation: 8, rhrDeviation: -3, sleepQuality: 80, currentHRV: 52, currentRHR: 55, baselineHRV: 48, baselineRHR: 57)),
-                RecoveryScore(score: 70, category: .optimal, date: Date().addingTimeInterval(-2*24*60*60), components: .init(hrvDeviation: 4, rhrDeviation: 1, sleepQuality: 72, currentHRV: 50, currentRHR: 58, baselineHRV: 48, baselineRHR: 57)),
-                RecoveryScore(score: 82, category: .optimal, date: Date().addingTimeInterval(-1*24*60*60), components: .init(hrvDeviation: 15, rhrDeviation: -5, sleepQuality: 90, currentHRV: 55, currentRHR: 54, baselineHRV: 48, baselineRHR: 57)),
-                RecoveryScore(score: 78, category: .optimal, date: Date(), components: .init(hrvDeviation: 12, rhrDeviation: -2, sleepQuality: 85, currentHRV: 54, currentRHR: 56, baselineHRV: 48, baselineRHR: 57))
-            ]
+            history: []
         )
     }
     .watchBackground()

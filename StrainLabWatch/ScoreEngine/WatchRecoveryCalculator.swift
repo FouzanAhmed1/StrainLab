@@ -77,17 +77,17 @@ public struct WatchRecoveryCalculator: Sendable {
         }
 
         return RecoveryScore(
+            date: Date(),
             score: clampedScore,
             category: category,
-            date: Date(),
             components: RecoveryScore.Components(
                 hrvDeviation: hrvDeviation,
                 rhrDeviation: rhrDeviation,
                 sleepQuality: sleepScore,
+                hrvBaseline: baseline.hrvBaseline7Day,
+                rhrBaseline: baseline.rhrBaseline7Day,
                 currentHRV: avgHRV,
-                currentRHR: restingHeartRate ?? baseline.rhrBaseline7Day,
-                baselineHRV: baseline.hrvBaseline7Day,
-                baselineRHR: baseline.rhrBaseline7Day
+                currentRHR: restingHeartRate ?? baseline.rhrBaseline7Day
             )
         )
     }

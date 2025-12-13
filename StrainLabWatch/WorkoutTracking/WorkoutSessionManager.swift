@@ -3,18 +3,17 @@ import HealthKit
 import CoreMotion
 import StrainLabKit
 
-@Observable
-public final class WorkoutSessionManager: NSObject, @unchecked Sendable {
+public final class WorkoutSessionManager: NSObject, ObservableObject, @unchecked Sendable {
     private let healthStore = HKHealthStore()
     private let motionManager = CMMotionManager()
 
     private var workoutSession: HKWorkoutSession?
     private var workoutBuilder: HKLiveWorkoutBuilder?
 
-    public private(set) var currentHeartRate: Double = 0
-    public private(set) var elapsedTime: TimeInterval = 0
-    public private(set) var activeCalories: Double = 0
-    public private(set) var isWorkoutActive = false
+    @Published public private(set) var currentHeartRate: Double = 0
+    @Published public private(set) var elapsedTime: TimeInterval = 0
+    @Published public private(set) var activeCalories: Double = 0
+    @Published public private(set) var isWorkoutActive = false
 
     private var heartRateSamples: [HeartRateSample] = []
     private var accelerometerReadings: [(timestamp: Date, magnitude: Double)] = []

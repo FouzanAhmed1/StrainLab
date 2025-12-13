@@ -332,6 +332,56 @@ public final class WatchHealthKitManager: @unchecked Sendable {
         }
     }
 
+    /// Query recent heart rate samples (for background sync)
+    public func queryRecentHeartRateSamples(hours: Int = 1) async -> [HeartRateSample] {
+        let startDate = Date().addingTimeInterval(-Double(hours) * 60 * 60)
+
+        return await withCheckedContinuation { continuation in
+            let predicate = HKQuery.predicateForSamples(
+                withStart: startDate,
+                end: Date(),
+                options: .strictStartDate
+            )
+
+            let sortDescriptor = NSSortDescriptor(
+                key: HKSampleSortIdentifierStartDate,
+                ascending: true
+            )
+
+            let query = HKSampleQuery(
+                sampleType: heartRateType,
+                predicate: predicate,
+                limit: HKObjectQueryNoLimit,
+                sortDescriptors: [sortDescriptor]
+            ) { _, samples, error in
+                guard error == nil,
+                      let quantitySamples = samples as? [HKQuantitySample] else {
+                    continuation.resume(returning: [])
+                    return
+                }
+
+                let hrUnit = HKUnit.count().unitDivided(by: .minute())
+                let hrSamples = quantitySamples.map { sample in
+                    HeartRateSample(
+                        timestamp: sample.endDate,
+                        beatsPerMinute: sample.quantity.doubleValue(for: hrUnit),
+                        source: .watch
+                    )
+                }
+
+                continuation.resume(returning: hrSamples)
+            }
+
+            healthStore.execute(query)
+        }
+    }
+
+    /// Query recent HRV samples (for background sync)
+    public func queryRecentHRVSamples(hours: Int = 1) async -> [HRVSample] {
+        let startDate = Date().addingTimeInterval(-Double(hours) * 60 * 60)
+        return await queryHRVSamples(from: startDate, to: Date())
+    }
+
     /// Query heart rate samples for a specific date (for strain calculation)
     public func queryTodayHeartRateSamples() async -> [HeartRateSample] {
         let calendar = Calendar.current

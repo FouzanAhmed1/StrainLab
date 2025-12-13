@@ -147,12 +147,12 @@ struct StrainGuidanceWatchView: View {
     NavigationStack {
         StrainGuidanceWatchView(
             score: StrainScore(
+                date: Date(),
                 score: 10.5,
                 category: .moderate,
-                date: Date(),
                 components: StrainScore.Components(
                     activityMinutes: 35,
-                    zoneMinutes: StrainScore.ZoneMinutes(zone1: 10, zone2: 12, zone3: 8, zone4: 3, zone5: 1),
+                    zoneMinutes: StrainScore.Components.ZoneMinutes(zone1: 10, zone2: 12, zone3: 8, zone4: 3, zone5: 1),
                     workoutContributions: []
                 )
             ),
