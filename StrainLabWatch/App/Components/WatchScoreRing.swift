@@ -131,11 +131,21 @@ struct WatchHeroRecoveryRing: View {
     var body: some View {
         VStack(spacing: WatchTheme.paddingS) {
             WatchScoreRing.recovery(score: score, size: .hero)
+                .accessibilityHidden(true)
 
             Text(score?.category.displayName ?? "Loading")
                 .font(WatchTheme.captionFont)
                 .foregroundStyle(score?.category.watchColor ?? WatchTheme.textSecondary)
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(accessibilityLabel)
+    }
+
+    private var accessibilityLabel: String {
+        if let score = score {
+            return "Recovery \(Int(score.score)) percent, \(score.category.displayName)"
+        }
+        return "Recovery loading"
     }
 }
 

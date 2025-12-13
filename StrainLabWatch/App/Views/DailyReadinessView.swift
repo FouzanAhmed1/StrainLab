@@ -1,4 +1,5 @@
 import SwiftUI
+import WatchKit
 import StrainLabKit
 
 /// Main Daily Readiness screen for Apple Watch
@@ -12,6 +13,7 @@ struct DailyReadinessView: View {
     @State private var showingRecoveryDetail = false
     @State private var showingStrainDetail = false
     @State private var showingSleepDetail = false
+    @State private var hasAnimated = false
 
     var body: some View {
         NavigationStack {
@@ -22,18 +24,26 @@ struct DailyReadinessView: View {
                         insight: scoreEngine.shortInsight,
                         confidence: scoreEngine.dailyInsight?.confidence
                     )
+                    .accessibilityLabel(insightAccessibilityLabel)
 
                     // Hero recovery ring (tap for details)
                     Button {
+                        playHaptic(.click)
                         showingRecoveryDetail = true
                     } label: {
                         WatchHeroRecoveryRing(score: scoreEngine.recoveryScore)
                     }
                     .buttonStyle(.plain)
+                    .scaleEffect(hasAnimated ? 1.0 : 0.8)
+                    .opacity(hasAnimated ? 1.0 : 0.0)
+                    .animation(.spring(response: 0.5, dampingFraction: 0.7), value: hasAnimated)
+                    .accessibilityLabel(recoveryAccessibilityLabel)
+                    .accessibilityHint("Double tap for recovery details")
 
                     // Strain and Sleep compact cards side by side
                     HStack(spacing: WatchTheme.paddingS) {
                         Button {
+                            playHaptic(.click)
                             showingStrainDetail = true
                         } label: {
                             WatchCompactStrainCard(
@@ -42,17 +52,28 @@ struct DailyReadinessView: View {
                             )
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(strainAccessibilityLabel)
+                        .accessibilityHint("Double tap for strain details")
 
                         Button {
+                            playHaptic(.click)
                             showingSleepDetail = true
                         } label: {
                             WatchCompactSleepCard(score: scoreEngine.sleepScore)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(sleepAccessibilityLabel)
+                        .accessibilityHint("Double tap for sleep details")
                     }
+                    .offset(y: hasAnimated ? 0 : 20)
+                    .opacity(hasAnimated ? 1.0 : 0.0)
+                    .animation(.spring(response: 0.5, dampingFraction: 0.7).delay(0.1), value: hasAnimated)
 
                     // Active workout or start workout button
                     workoutSection
+                        .offset(y: hasAnimated ? 0 : 20)
+                        .opacity(hasAnimated ? 1.0 : 0.0)
+                        .animation(.spring(response: 0.5, dampingFraction: 0.7).delay(0.2), value: hasAnimated)
                 }
                 .padding(.horizontal, WatchTheme.paddingS)
                 .padding(.bottom, WatchTheme.paddingM)
@@ -80,6 +101,54 @@ struct DailyReadinessView: View {
         .task {
             await loadData()
         }
+        .onAppear {
+            // Trigger entrance animation
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                hasAnimated = true
+            }
+        }
+    }
+
+    // MARK: - Haptic Feedback
+
+    private func playHaptic(_ type: WKHapticType) {
+        WKInterfaceDevice.current().play(type)
+    }
+
+    // MARK: - Accessibility Labels
+
+    private var insightAccessibilityLabel: String {
+        if let insight = scoreEngine.shortInsight {
+            return "Today's insight: \(insight)"
+        }
+        return "Loading daily insight"
+    }
+
+    private var recoveryAccessibilityLabel: String {
+        if let score = scoreEngine.recoveryScore {
+            return "Recovery \(Int(score.score)) percent, \(score.category.displayName)"
+        }
+        return "Recovery score loading"
+    }
+
+    private var strainAccessibilityLabel: String {
+        if let score = scoreEngine.strainScore {
+            let targetInfo: String
+            if let guidance = scoreEngine.strainGuidance {
+                targetInfo = ", target \(guidance.formattedRange)"
+            } else {
+                targetInfo = ""
+            }
+            return "Strain \(String(format: "%.1f", score.score)) out of 21\(targetInfo)"
+        }
+        return "Strain score loading"
+    }
+
+    private var sleepAccessibilityLabel: String {
+        if let score = scoreEngine.sleepScore {
+            return "Sleep \(Int(score.score)) percent, \(score.components.formattedDuration)"
+        }
+        return "Sleep score loading"
     }
 
     // MARK: - Workout Section

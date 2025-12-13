@@ -1,5 +1,6 @@
 import SwiftUI
 import HealthKit
+import WatchKit
 
 struct WorkoutSelectionView: View {
     @Environment(\.dismiss) private var dismiss
@@ -27,10 +28,12 @@ struct WorkoutSelectionView: View {
                         Image(systemName: icon)
                             .font(.title3)
                             .frame(width: 30)
-                            .foregroundStyle(.green)
+                            .foregroundStyle(WatchTheme.recoveryGreen)
                         Text(name)
+                            .font(WatchTheme.bodyFont)
                     }
                 }
+                .accessibilityLabel("Start \(name) workout")
             }
         }
         .navigationTitle("Select Workout")
@@ -39,9 +42,13 @@ struct WorkoutSelectionView: View {
     private func startWorkout(type: HKWorkoutActivityType) {
         Task {
             do {
+                // Play haptic feedback on workout start
+                WKInterfaceDevice.current().play(.start)
                 try await workoutManager.startWorkout(activityType: type)
                 dismiss()
             } catch {
+                // Play failure haptic
+                WKInterfaceDevice.current().play(.failure)
                 print("Failed to start workout: \(error)")
             }
         }
