@@ -48,27 +48,31 @@ public struct SleepConsistencyCalculator: Sendable {
     // MARK: - Timing Analysis
 
     private func calculateTimingConsistency(sleepScores: [SleepScore]) -> Double {
-        let bedtimes = sleepScores.compactMap { extractMinutesFromMidnight(date: $0.sleepStart) }
-        let waketimes = sleepScores.compactMap { extractMinutesFromMidnight(date: $0.sleepEnd) }
+        // Since SleepScore doesn't have sleep start/end times, we use date as a proxy
+        // and focus on duration consistency instead
+        // For full timing analysis, we would need to extend SleepScore with start/end times
 
-        guard !bedtimes.isEmpty && !waketimes.isEmpty else { return 0 }
+        // Use sleep date to estimate wake time variation
+        let dates = sleepScores.map { $0.date }
+        guard dates.count >= 2 else { return 100 } // Assume consistent if not enough data
 
-        let bedtimeCV = calculateCircularCV(minutes: bedtimes)
-        let waketimeCV = calculateCircularCV(minutes: waketimes)
+        let wakeMinutes = dates.compactMap { extractMinutesFromMidnight(date: $0) }
+        guard !wakeMinutes.isEmpty else { return 100 }
+
+        let waketimeCV = calculateCircularCV(minutes: wakeMinutes)
 
         // Convert CV to score (lower variance = higher score)
         // CV of 30 min = 100, CV of 120 min = 0
-        let bedtimeScore = max(0, min(100, 100 - (bedtimeCV - 30) * (100.0 / 90.0)))
         let waketimeScore = max(0, min(100, 100 - (waketimeCV - 30) * (100.0 / 90.0)))
 
-        return (bedtimeScore + waketimeScore) / 2
+        return waketimeScore
     }
 
-    private func extractMinutesFromMidnight(date: Date?) -> Double? {
-        guard let date = date else { return nil }
+    private func extractMinutesFromMidnight(date: Date) -> Double {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour, .minute], from: date)
-        guard let hour = components.hour, let minute = components.minute else { return nil }
+        let hour = components.hour ?? 0
+        let minute = components.minute ?? 0
 
         var minutes = Double(hour * 60 + minute)
         // Normalize for bedtimes after midnight (0-5am becomes 24:00-29:00)
@@ -91,7 +95,7 @@ public struct SleepConsistencyCalculator: Sendable {
     // MARK: - Duration Analysis
 
     private func calculateDurationConsistency(sleepScores: [SleepScore]) -> Double {
-        let durations = sleepScores.map { $0.components.totalSleepMinutes }
+        let durations = sleepScores.map { $0.components.totalDurationMinutes }
 
         guard !durations.isEmpty else { return 0 }
 

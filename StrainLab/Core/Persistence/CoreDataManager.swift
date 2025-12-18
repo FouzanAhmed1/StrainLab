@@ -1,5 +1,5 @@
 import Foundation
-import CoreData
+@preconcurrency import CoreData
 import StrainLabKit
 
 public actor CoreDataManager {

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9531993A0FDA00A7607DBDD9"
-               BuildableName = "StrainLab.app"
-               BlueprintName = "StrainLab"
+               BlueprintIdentifier = "C841CFB3A041AC095E514A06"
+               BuildableName = "StrainLabWatch.app"
+               BlueprintName = "StrainLabWatch"
                ReferencedContainer = "container:StrainLab.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,9 +30,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9531993A0FDA00A7607DBDD9"
-            BuildableName = "StrainLab.app"
-            BlueprintName = "StrainLab"
+            BlueprintIdentifier = "C841CFB3A041AC095E514A06"
+            BuildableName = "StrainLabWatch.app"
+            BlueprintName = "StrainLabWatch"
             ReferencedContainer = "container:StrainLab.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -53,9 +53,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9531993A0FDA00A7607DBDD9"
-            BuildableName = "StrainLab.app"
-            BlueprintName = "StrainLab"
+            BlueprintIdentifier = "C841CFB3A041AC095E514A06"
+            BuildableName = "StrainLabWatch.app"
+            BlueprintName = "StrainLabWatch"
             ReferencedContainer = "container:StrainLab.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,9 +70,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9531993A0FDA00A7607DBDD9"
-            BuildableName = "StrainLab.app"
-            BlueprintName = "StrainLab"
+            BlueprintIdentifier = "C841CFB3A041AC095E514A06"
+            BuildableName = "StrainLabWatch.app"
+            BlueprintName = "StrainLabWatch"
             ReferencedContainer = "container:StrainLab.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

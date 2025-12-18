@@ -1,8 +1,9 @@
 {
   "images" : [
     {
-      "idiom" : "watch",
-      "scale" : "2x",
+      "filename" : "Gemini_Generated_Image_6mnnwq6mnnwq6mnn.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
       "size" : "1024x1024"
     }
   ],

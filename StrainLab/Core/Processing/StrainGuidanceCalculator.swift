@@ -77,8 +77,6 @@ public struct StrainGuidanceCalculator: Sendable {
             adjustment = 0
         case .intense:
             adjustment = 2
-        case .veryIntense:
-            adjustment = 3
         }
 
         let newLower = max(0, range.lowerBound + adjustment)
@@ -108,7 +106,6 @@ public struct StrainGuidanceCalculator: Sendable {
         case .light: targetDailyStrain = 8
         case .moderate: targetDailyStrain = 11
         case .intense: targetDailyStrain = 14
-        case .veryIntense: targetDailyStrain = 16
         }
 
         // Calculate trend

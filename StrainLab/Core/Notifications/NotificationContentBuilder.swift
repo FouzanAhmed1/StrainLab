@@ -36,7 +36,7 @@ public struct NotificationContentBuilder: Sendable {
         return content
     }
 
-    private func generateDefaultRecommendation(for category: RecoveryCategory) -> String {
+    private func generateDefaultRecommendation(for category: RecoveryScore.Category) -> String {
         switch category {
         case .optimal:
             return "Great recovery — today is a good day to push"

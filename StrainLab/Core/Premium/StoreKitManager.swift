@@ -57,7 +57,7 @@ public final class StoreKitManager: ObservableObject {
 
         switch result {
         case .success(let verification):
-            let transaction = try checkVerified(verification)
+            let transaction = try Self.checkVerified(verification)
             await updatePurchasedProducts()
             await transaction.finish()
             return transaction
@@ -90,7 +90,7 @@ public final class StoreKitManager: ObservableObject {
         return Task.detached {
             for await result in Transaction.updates {
                 do {
-                    let transaction = try self.checkVerified(result)
+                    let transaction = try Self.checkVerified(result)
                     await self.updatePurchasedProducts()
                     await transaction.finish()
                 } catch {
@@ -100,7 +100,7 @@ public final class StoreKitManager: ObservableObject {
         }
     }
 
-    private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+    private nonisolated static func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
         switch result {
         case .unverified:
             throw StoreError.failedVerification
@@ -115,7 +115,7 @@ public final class StoreKitManager: ObservableObject {
 
         for await result in Transaction.currentEntitlements {
             do {
-                let transaction = try checkVerified(result)
+                let transaction = try Self.checkVerified(result)
 
                 if let product = products.first(where: { $0.id == transaction.productID }) {
                     purchased.append(product)

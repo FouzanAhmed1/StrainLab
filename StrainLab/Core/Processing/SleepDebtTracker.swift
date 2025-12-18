@@ -66,7 +66,7 @@ public struct SleepDebtTracker: Sendable {
     ) -> Double {
         var debt = 0.0
         for score in sleepScores {
-            let actualSleep = score.components.totalSleepMinutes
+            let actualSleep = score.components.totalDurationMinutes
             let deficit = targetMinutes - actualSleep
             if deficit > 0 {
                 debt += deficit
@@ -89,7 +89,7 @@ public struct SleepDebtTracker: Sendable {
         var dayIndex = 0
 
         for score in reversed {
-            let actualSleep = score.components.totalSleepMinutes
+            let actualSleep = score.components.totalDurationMinutes
             let deficit = targetMinutes - actualSleep
 
             // Apply decay based on age
@@ -115,7 +115,7 @@ public struct SleepDebtTracker: Sendable {
     ) -> SleepDebt.Trend {
         guard sleepScores.count >= 3 else { return .stable }
 
-        let deficits = sleepScores.map { targetMinutes - $0.components.totalSleepMinutes }
+        let deficits = sleepScores.map { targetMinutes - $0.components.totalDurationMinutes }
 
         // Simple linear regression
         let n = Double(deficits.count)

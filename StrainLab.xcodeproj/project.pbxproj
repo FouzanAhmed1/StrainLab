@@ -3,79 +3,206 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		03F724270FB344329654008D /* CDRecoveryScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41841DFAB82F4ED7314ED60 /* CDRecoveryScore.swift */; };
+		07F1D4CE8494F1F1F1961232 /* WatchCompactCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE856218F62455A7CB38C2 /* WatchCompactCards.swift */; };
 		0B83B24C642FC9B3C639D788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68543CCA73E06D66457488C /* Assets.xcassets */; };
 		124CB0C4BCF619FF55D320D8 /* StrainLabModelDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2017FC56B960212F56DDFA2 /* StrainLabModelDefinition.swift */; };
+		164A96C520804D0BF661D9C1 /* RecoveryWatchComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA445963A18BE12FD5304587 /* RecoveryWatchComplication.swift */; };
+		16D39A100D805EF482BE3ED5 /* WatchTrendChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FECC24D632506F46455E76C /* WatchTrendChart.swift */; };
+		1FD3C5494F22B652A8C407D9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE173278BD76D59FDF6F072D /* NotificationManager.swift */; };
 		219D0B39AFF96B4FEDD816A7 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F70E00210FFAF5D198EDF /* DashboardViewModel.swift */; };
 		2EF411DE0CD13C5081D0839E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D200F0EFDD0F36DBED3B37 /* CoreDataManager.swift */; };
+		2FB5EC5411A83B6A469B7A61 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8C725B5088C5BC2E03EE2 /* SettingsView.swift */; };
+		2FFE96B065B5B4CFFA1A642A /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27030E88A7386966CDBC570 /* PaywallView.swift */; };
+		30C5F47B4E5E68F9F0B01C0D /* WatchInsightBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381E089A3CD059EAD6B5AEC /* WatchInsightBanner.swift */; };
 		312E018591E5D662AB55EDB1 /* SleepScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD1E0C5A3F35E4DADDAAE6 /* SleepScoreCalculator.swift */; };
 		334AC48D3EFE1450C5A3BD62 /* RecoveryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25EA6D7477B383FA8355B1 /* RecoveryDetailView.swift */; };
 		3543101732FA89D90B7930A3 /* CDHRVSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50FE5765E48DC36863DC0F3 /* CDHRVSample.swift */; };
+		35806BEE7FB3397DC993DC38 /* StrainLabWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3DC904628C4CED4FECB0 /* StrainLabWidgetBundle.swift */; };
+		3649EB5AB77AEFBD9F055B75 /* RecoveryDetailWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E19096312BACDD4A648999 /* RecoveryDetailWatchView.swift */; };
+		370A882C12F0272068DF8A21 /* WatchScoreEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545AC683DA2E1A6B668D577 /* WatchScoreEngine.swift */; };
+		3876588EE7D675C90198F9EA /* WatchStrainCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA84BA533F5083D8CC366876 /* WatchStrainCalculator.swift */; };
+		3AE8AD166B8E4A90FAD8BAD4 /* DailyInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EC17D7A92393D57F60FE8E /* DailyInsight.swift */; };
+		40BECEBA45A0E53881DB6EE7 /* WatchRecoveryCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912ABE009F9085C3D1DAC68 /* WatchRecoveryCalculator.swift */; };
+		415D8C162B6B88090865E2D1 /* SleepConsistencyCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F43646D0D3CB55374A2D5 /* SleepConsistencyCalculator.swift */; };
 		45948CE12D04963FC7E891AC /* ActiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4595E48EB65FE1F57DEAA7B7 /* ActiveWorkoutView.swift */; };
+		49AA9C92ACDD36799680E2FF /* HeroRecoveryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECEE8800AF7C51E5FE83B5A /* HeroRecoveryCard.swift */; };
+		49FC66124E9C319A680B347F /* StrainGuidanceWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB733663CF9D7F5C9B3D6800 /* StrainGuidanceWatchView.swift */; };
 		4A856D7352AD9B42A01A249D /* WorkoutSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BD307D73A1DE619DA5299A /* WorkoutSelectionView.swift */; };
 		4C158DF97D2F1BF17A2B35FB /* BaselineCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E43AB3DC4F79D3E46696C5 /* BaselineCalculator.swift */; };
 		4C752245141B1DC720636FDD /* ComponentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC466178063D0FB956981B8 /* ComponentCard.swift */; };
+		4F68AE321207F593D169014C /* WatchNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA547C06969C29AC58540250 /* WatchNotificationManager.swift */; };
 		4F88415014625068DA54F0EA /* WorkoutSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B593F6E5B027F5EBF23F2FE /* WorkoutSessionManager.swift */; };
 		4F9DE460A075E57D249B49E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43C1E46D3CD933989062119 /* Assets.xcassets */; };
 		4FDC8742C265B9C89B2809A0 /* ScoreRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C1F27370CCE2487D347AD /* ScoreRing.swift */; };
+		529C1FBD11CBB87D9A0C266E /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2460959E84724BC5DE51B3 /* PremiumManager.swift */; };
+		534B819C0F1F593897ADA2C7 /* SleepDetailWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE0FD3578DE33F0B49EF1D /* SleepDetailWatchView.swift */; };
+		54732EBA912F55C7F5754E16 /* StrainWatchComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E69031DA0518D049D697FF /* StrainWatchComplication.swift */; };
+		54C73F9AB54986C181BA0DBC /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA46822DCE2879878D7D9E /* SettingsManager.swift */; };
 		5D0B6C82D78C1ADB68C0D4E9 /* RecoveryScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A77139EBDD0607DE84CAD /* RecoveryScoreCalculator.swift */; };
+		651FD5962267D5DDA4773B65 /* WatchDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4273C2796A28A27E7BF424EA /* WatchDataStore.swift */; };
+		65A4D43528D92B2ECAD31929 /* InsightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F579D7F6279C40BB82AB320 /* InsightCardView.swift */; };
+		65D1AFE6A84476E50712931E /* WatchComplicationBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250832CE9C39A4E1AF702FAF /* WatchComplicationBundle.swift */; };
+		6654E6B02AFE6814B7DF97D3 /* DailyReadinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774B37BCD9C0E88DE4C374F6 /* DailyReadinessView.swift */; };
+		66935D38CE5869F9B146FAC0 /* DataQualityAssessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29062A8D30565D36914819E /* DataQualityAssessor.swift */; };
 		69A6D2A705D38A3B1B66E93F /* HRVProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824A3F0948A25DAFFA32149 /* HRVProcessor.swift */; };
 		6D57238B65B8763A56227E24 /* iOSHealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27F6F2397565374363B4EF /* iOSHealthKitManager.swift */; };
 		6D642DC7F5E07F7E14A03B6A /* CDHeartRateSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA861A6234DE8805455E57D3 /* CDHeartRateSample.swift */; };
+		7011BDD05D7DBF76507D8EBF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E395D5D58A04A386E51689 /* WelcomeView.swift */; };
+		7680D79265C1D11548C1ED85 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C70D9B8FFA194F796B84D5D /* NotificationPermissionView.swift */; };
+		78D57E69A204EE818D3E2CB9 /* WeightVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61439367E90DC7AC14AA7661 /* WeightVisualization.swift */; };
 		82E91A734C5B3E4C1E547014 /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044DBAA1F8424A7004DED04 /* WatchHomeView.swift */; };
+		8558C5173D050C6199F9DC9B /* WidgetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638FC97293A891BE4DB8F3F /* WidgetDataProvider.swift */; };
 		8BA69E34D8AE9677345E2523 /* StrainLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F11ACBEE7BC97C18CD8274 /* StrainLabApp.swift */; };
 		8BB2980CBF42DBC5C108F793 /* TrendChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE64964AEBA38022F3B246 /* TrendChart.swift */; };
+		8BD058851839D86E6539B411 /* StrainLabWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 00FFAE02043B2F30AD4DCA78 /* StrainLabWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8E48948C0E38C95DC27B3AEB /* CDUserBaseline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292E07EA3557624F4922059 /* CDUserBaseline.swift */; };
+		937BD1D514788955C8A4A360 /* DataQualityBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E446E1FC7037CE841CF28 /* DataQualityBadge.swift */; };
+		9589876407B440183069AAFB /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B05B8064BA26083164D989 /* OnboardingCoordinator.swift */; };
 		9A2EFD7ED423915AF48A6C47 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B2194634F7E2DED93C52EC /* DashboardView.swift */; };
+		9BCD7CE2F9DA08767EAB7749 /* WatchAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D00703ED6BF2746C590C7 /* WatchAppDelegate.swift */; };
 		9F457C33433553017C243B2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55C57907D0C3D75619E66C /* ContentView.swift */; };
+		A297B8251BC131B80D8F5AD2 /* SleepDebtTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C39B6B2BDBEF2BD5FB51B /* SleepDebtTracker.swift */; };
 		A4F56B71BC02295E5061D4A1 /* CDSleepScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23FD207A2627D3AE1D84186 /* CDSleepScore.swift */; };
+		AC33FA46BA12E5D49555C457 /* StrainGuidanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3365F5957469B889612A46 /* StrainGuidanceCalculator.swift */; };
+		B57572A7F9BB596296EA1D7E /* WatchInsightGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1467487D608761E0828CDC /* WatchInsightGenerator.swift */; };
 		B585429E63CD5AC53D1866C4 /* WatchHealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3221734D7694ACC2E73268 /* WatchHealthKitManager.swift */; };
+		B67E8A90352DBAB5CAD06465 /* SleepGoalSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824F6CD956BDB72E4AD8F17B /* SleepGoalSetupView.swift */; };
 		B83F2B13EEFC7098DB9596B4 /* StrainLabWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8EF3E6E767DC289011702 /* StrainLabWatchApp.swift */; };
+		B88F46724B76B49EAB9597F0 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC378A9F75DABCB42D2FC2 /* StoreKitManager.swift */; };
+		BA80BFAC6449CA5EF41599A8 /* InsightGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AFEA899B794A311F8E034B /* InsightGenerator.swift */; };
+		BA9869855586969FA7A7EFB4 /* HealthKitPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87CC3525CF1BB06B901F43C /* HealthKitPermissionView.swift */; };
 		BB2C6AB8D38BA240223553C2 /* CDStrainScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E6AC048E4F5A2C0B77472 /* CDStrainScore.swift */; };
+		BD14CF1FFB4A1E35B13114CF /* FeatureGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B899865F8E7560A1DF6F100 /* FeatureGate.swift */; };
 		CA1A2F4FB6C1098DFBC5CB85 /* iOSConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA1E55DA979674DFB85609 /* iOSConnectivityManager.swift */; };
+		CA9EFBAED54DFACFCCF527CD /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0637801394C57E62D7DEBAF3 /* UserSettings.swift */; };
+		CAC5E487564D836D942823C5 /* WatchBackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7251F31F1068705182D86741 /* WatchBackgroundManager.swift */; };
+		D4633654DC3E28F5ECFB66DA /* WatchTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3901D2C0F6B180132BC3F47 /* WatchTheme.swift */; };
+		D8F83FF6E3A77BB46A2A990C /* RecoveryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12075CE78FE239BB9712D305 /* RecoveryWidget.swift */; };
 		DBEF6654067CBAA5A80DF779 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1293327FEE6F8361E6D33 /* WatchConnectivityManager.swift */; };
+		DDFC77FB91A075EABA666F23 /* WatchScoreRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0BA3E26DD8FE836E3181FA /* WatchScoreRing.swift */; };
 		E15FD4AE19A0BA1A282B3A2A /* StrainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CC3A787CF10C56B05CA1D /* StrainDetailView.swift */; };
 		E339FCE43F33540B69DB4294 /* StrainScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC64D5B81284F9053EBD71 /* StrainScoreCalculator.swift */; };
+		E424E9DA5FC1CD29F73FD3E0 /* OnboardingCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEFAC4807B37BC6CE5EEF62 /* OnboardingCompleteView.swift */; };
+		E489F796EFC36FBDB7E4671F /* NotificationContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C15A62953D963CB533F950 /* NotificationContentBuilder.swift */; };
 		E7625DE9330449707072B0EF /* StrainLabKit in Frameworks */ = {isa = PBXBuildFile; productRef = 286BE67D2706E0588DBEB623 /* StrainLabKit */; };
 		EA07560D90E96AF483487DD2 /* StrainLabKit in Frameworks */ = {isa = PBXBuildFile; productRef = DB96DE1261F73C70F07E48DC /* StrainLabKit */; };
 		F0D3BED5A24140CB3E9168EB /* ScoreEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC16DB57C406C0962ADB6DC3 /* ScoreEngine.swift */; };
 		F2496C0479591C910CE54055 /* SleepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1DD8FFA6C6713C93C86F1 /* SleepDetailView.swift */; };
+		F2BC9F579EA4221CAD03C2C8 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB84BF8A4BAE3475CF33BF6 /* OnboardingContainerView.swift */; };
+		F33DC7D7350086B7A5303B3C /* ExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D07BA01036002061D5FE0 /* ExplainerView.swift */; };
 		F6921F4568B9A9908C15FD34 /* StrainLabTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4008AF3EA197C16C97178C6B /* StrainLabTheme.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		34C49AE95D71E83A85D2D2C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BA5612B11F11D8C7D2B6A65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 601F335DB41651DD1AF0D86A;
+			remoteInfo = StrainLabWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		027816292EED5FE700BC1835 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14F96DD2B8B4FA8047A11746 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8BD058851839D86E6539B411 /* StrainLabWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		00FFAE02043B2F30AD4DCA78 /* StrainLabWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StrainLabWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0637801394C57E62D7DEBAF3 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		0912ABE009F9085C3D1DAC68 /* WatchRecoveryCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRecoveryCalculator.swift; sourceTree = "<group>"; };
 		09E73B22950E7714B2273BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0D4019C3555188672C854355 /* StrainLabWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrainLabWatch.entitlements; sourceTree = "<group>"; };
+		12075CE78FE239BB9712D305 /* RecoveryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWidget.swift; sourceTree = "<group>"; };
+		13C15A62953D963CB533F950 /* NotificationContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentBuilder.swift; sourceTree = "<group>"; };
+		1638FC97293A891BE4DB8F3F /* WidgetDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataProvider.swift; sourceTree = "<group>"; };
 		1AB1293327FEE6F8361E6D33 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		209E6AC048E4F5A2C0B77472 /* CDStrainScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStrainScore.swift; sourceTree = "<group>"; };
+		250832CE9C39A4E1AF702FAF /* WatchComplicationBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchComplicationBundle.swift; sourceTree = "<group>"; };
+		2B899865F8E7560A1DF6F100 /* FeatureGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureGate.swift; sourceTree = "<group>"; };
+		31EC17D7A92393D57F60FE8E /* DailyInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyInsight.swift; sourceTree = "<group>"; };
 		3292E07EA3557624F4922059 /* CDUserBaseline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUserBaseline.swift; sourceTree = "<group>"; };
+		340F43646D0D3CB55374A2D5 /* SleepConsistencyCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepConsistencyCalculator.swift; sourceTree = "<group>"; };
 		4008AF3EA197C16C97178C6B /* StrainLabTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabTheme.swift; sourceTree = "<group>"; };
 		408F70E00210FFAF5D198EDF /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		4273C2796A28A27E7BF424EA /* WatchDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDataStore.swift; sourceTree = "<group>"; };
+		43B05B8064BA26083164D989 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		4595E48EB65FE1F57DEAA7B7 /* ActiveWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutView.swift; sourceTree = "<group>"; };
+		48E19096312BACDD4A648999 /* RecoveryDetailWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryDetailWatchView.swift; sourceTree = "<group>"; };
+		4AB84BF8A4BAE3475CF33BF6 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
 		4B593F6E5B027F5EBF23F2FE /* WorkoutSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionManager.swift; sourceTree = "<group>"; };
-		5C6E34B3E1521F8911151964 /* StrainLabKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = StrainLabKit; path = StrainLabKit; sourceTree = SOURCE_ROOT; };
+		4D8D3DC904628C4CED4FECB0 /* StrainLabWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabWidgetBundle.swift; sourceTree = "<group>"; };
+		4F579D7F6279C40BB82AB320 /* InsightCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCardView.swift; sourceTree = "<group>"; };
+		5545AC683DA2E1A6B668D577 /* WatchScoreEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchScoreEngine.swift; sourceTree = "<group>"; };
+		5ACC378A9F75DABCB42D2FC2 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		5C6E34B3E1521F8911151964 /* StrainLabKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = StrainLabKit; sourceTree = SOURCE_ROOT; };
+		5FECC24D632506F46455E76C /* WatchTrendChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTrendChart.swift; sourceTree = "<group>"; };
+		61439367E90DC7AC14AA7661 /* WeightVisualization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightVisualization.swift; sourceTree = "<group>"; };
 		645246D30DC0E07607CB6548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		65DA1E55DA979674DFB85609 /* iOSConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSConnectivityManager.swift; sourceTree = "<group>"; };
+		681D07BA01036002061D5FE0 /* ExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerView.swift; sourceTree = "<group>"; };
+		6C70D9B8FFA194F796B84D5D /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
 		6F5A77139EBDD0607DE84CAD /* RecoveryScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryScoreCalculator.swift; sourceTree = "<group>"; };
+		702E446E1FC7037CE841CF28 /* DataQualityBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQualityBadge.swift; sourceTree = "<group>"; };
+		7251F31F1068705182D86741 /* WatchBackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBackgroundManager.swift; sourceTree = "<group>"; };
+		72BA46822DCE2879878D7D9E /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		737C1F27370CCE2487D347AD /* ScoreRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRing.swift; sourceTree = "<group>"; };
+		774B37BCD9C0E88DE4C374F6 /* DailyReadinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReadinessView.swift; sourceTree = "<group>"; };
+		7B3365F5957469B889612A46 /* StrainGuidanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainGuidanceCalculator.swift; sourceTree = "<group>"; };
+		7D2C39B6B2BDBEF2BD5FB51B /* SleepDebtTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDebtTracker.swift; sourceTree = "<group>"; };
+		824F6CD956BDB72E4AD8F17B /* SleepGoalSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepGoalSetupView.swift; sourceTree = "<group>"; };
+		8381E089A3CD059EAD6B5AEC /* WatchInsightBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchInsightBanner.swift; sourceTree = "<group>"; };
 		84BD1E0C5A3F35E4DADDAAE6 /* SleepScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepScoreCalculator.swift; sourceTree = "<group>"; };
-		8A3AC256649EF8ACF63387D5 /* StrainLab.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = StrainLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A3AC256649EF8ACF63387D5 /* StrainLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrainLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E46CC3B8A781F0F512AD0BE /* StrainLabWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrainLabWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		958CC3A787CF10C56B05CA1D /* StrainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainDetailView.swift; sourceTree = "<group>"; };
+		95AE856218F62455A7CB38C2 /* WatchCompactCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCompactCards.swift; sourceTree = "<group>"; };
 		99B2194634F7E2DED93C52EC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		9F3221734D7694ACC2E73268 /* WatchHealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHealthKitManager.swift; sourceTree = "<group>"; };
 		A0E1DD8FFA6C6713C93C86F1 /* SleepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDetailView.swift; sourceTree = "<group>"; };
+		A1E69031DA0518D049D697FF /* StrainWatchComplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainWatchComplication.swift; sourceTree = "<group>"; };
 		A2017FC56B960212F56DDFA2 /* StrainLabModelDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabModelDefinition.swift; sourceTree = "<group>"; };
 		A68543CCA73E06D66457488C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6DE0FD3578DE33F0B49EF1D /* SleepDetailWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDetailWatchView.swift; sourceTree = "<group>"; };
 		ABCC64D5B81284F9053EBD71 /* StrainScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainScoreCalculator.swift; sourceTree = "<group>"; };
+		AECEE8800AF7C51E5FE83B5A /* HeroRecoveryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRecoveryCard.swift; sourceTree = "<group>"; };
+		AF1467487D608761E0828CDC /* WatchInsightGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchInsightGenerator.swift; sourceTree = "<group>"; };
+		B27030E88A7386966CDBC570 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		BA84BA533F5083D8CC366876 /* WatchStrainCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStrainCalculator.swift; sourceTree = "<group>"; };
+		BDE8C725B5088C5BC2E03EE2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BEEFAC4807B37BC6CE5EEF62 /* OnboardingCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteView.swift; sourceTree = "<group>"; };
 		C0F11ACBEE7BC97C18CD8274 /* StrainLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabApp.swift; sourceTree = "<group>"; };
 		C43C1E46D3CD933989062119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5AFEA899B794A311F8E034B /* InsightGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightGenerator.swift; sourceTree = "<group>"; };
 		C8BD307D73A1DE619DA5299A /* WorkoutSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSelectionView.swift; sourceTree = "<group>"; };
+		C8E395D5D58A04A386E51689 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		C9AE64964AEBA38022F3B246 /* TrendChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendChart.swift; sourceTree = "<group>"; };
+		CA0FA97B33259CE55EE6E2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CA547C06969C29AC58540250 /* WatchNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchNotificationManager.swift; sourceTree = "<group>"; };
 		CBC466178063D0FB956981B8 /* ComponentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCard.swift; sourceTree = "<group>"; };
 		CC16DB57C406C0962ADB6DC3 /* ScoreEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEngine.swift; sourceTree = "<group>"; };
 		CE25EA6D7477B383FA8355B1 /* RecoveryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryDetailView.swift; sourceTree = "<group>"; };
@@ -83,13 +210,23 @@
 		D50FE5765E48DC36863DC0F3 /* CDHRVSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHRVSample.swift; sourceTree = "<group>"; };
 		D6E43AB3DC4F79D3E46696C5 /* BaselineCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineCalculator.swift; sourceTree = "<group>"; };
 		D824A3F0948A25DAFFA32149 /* HRVProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRVProcessor.swift; sourceTree = "<group>"; };
+		DA2460959E84724BC5DE51B3 /* PremiumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumManager.swift; sourceTree = "<group>"; };
+		DA5D00703ED6BF2746C590C7 /* WatchAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAppDelegate.swift; sourceTree = "<group>"; };
 		DC27F6F2397565374363B4EF /* iOSHealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSHealthKitManager.swift; sourceTree = "<group>"; };
+		DF0BA3E26DD8FE836E3181FA /* WatchScoreRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchScoreRing.swift; sourceTree = "<group>"; };
 		E044DBAA1F8424A7004DED04 /* WatchHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHomeView.swift; sourceTree = "<group>"; };
+		E29062A8D30565D36914819E /* DataQualityAssessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQualityAssessor.swift; sourceTree = "<group>"; };
 		E41841DFAB82F4ED7314ED60 /* CDRecoveryScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDRecoveryScore.swift; sourceTree = "<group>"; };
 		E8C8EF3E6E767DC289011702 /* StrainLabWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainLabWatchApp.swift; sourceTree = "<group>"; };
+		EE173278BD76D59FDF6F072D /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		F23FD207A2627D3AE1D84186 /* CDSleepScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSleepScore.swift; sourceTree = "<group>"; };
 		F38B54915D259F80045A505A /* StrainLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrainLab.entitlements; sourceTree = "<group>"; };
+		F3901D2C0F6B180132BC3F47 /* WatchTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTheme.swift; sourceTree = "<group>"; };
+		F87CC3525CF1BB06B901F43C /* HealthKitPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitPermissionView.swift; sourceTree = "<group>"; };
+		F9D2EEBB76C6B7934A44E113 /* StrainLabWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrainLabWidget.entitlements; sourceTree = "<group>"; };
+		FA445963A18BE12FD5304587 /* RecoveryWatchComplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWatchComplication.swift; sourceTree = "<group>"; };
 		FA861A6234DE8805455E57D3 /* CDHeartRateSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHeartRateSample.swift; sourceTree = "<group>"; };
+		FB733663CF9D7F5C9B3D6800 /* StrainGuidanceWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainGuidanceWatchView.swift; sourceTree = "<group>"; };
 		FE55C57907D0C3D75619E66C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +280,25 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		1C947AAC0F90E79D18881891 /* Complications */ = {
+			isa = PBXGroup;
+			children = (
+				FA445963A18BE12FD5304587 /* RecoveryWatchComplication.swift */,
+				A1E69031DA0518D049D697FF /* StrainWatchComplication.swift */,
+				250832CE9C39A4E1AF702FAF /* WatchComplicationBundle.swift */,
+			);
+			path = Complications;
+			sourceTree = "<group>";
+		};
+		20D90ECA378C51E0DD5E6ADF /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				13C15A62953D963CB533F950 /* NotificationContentBuilder.swift */,
+				EE173278BD76D59FDF6F072D /* NotificationManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		25D14A5848AA6B45AE5E27EB /* StrainLabWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,10 +306,23 @@
 				645246D30DC0E07607CB6548 /* Info.plist */,
 				0D4019C3555188672C854355 /* StrainLabWatch.entitlements */,
 				DB7F32295CDD21A4E4B8E94C /* App */,
+				28972220A0F6A9752B68EFB8 /* Background */,
+				1C947AAC0F90E79D18881891 /* Complications */,
 				3D5D82B7BE02E20F6548F82B /* DataCollection */,
+				3129E953D6EC6DE520070FEB /* ScoreEngine */,
+				EADBF5CB27F4C1826A11D624 /* Theme */,
 				303FC10A7E9A51E0465D66D8 /* WorkoutTracking */,
 			);
 			path = StrainLabWatch;
+			sourceTree = "<group>";
+		};
+		28972220A0F6A9752B68EFB8 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				7251F31F1068705182D86741 /* WatchBackgroundManager.swift */,
+				CA547C06969C29AC58540250 /* WatchNotificationManager.swift */,
+			);
+			path = Background;
 			sourceTree = "<group>";
 		};
 		2C63DC019AEACD9CE00BE68A /* Packages */ = {
@@ -172,11 +341,25 @@
 			path = WorkoutTracking;
 			sourceTree = "<group>";
 		};
+		3129E953D6EC6DE520070FEB /* ScoreEngine */ = {
+			isa = PBXGroup;
+			children = (
+				4273C2796A28A27E7BF424EA /* WatchDataStore.swift */,
+				AF1467487D608761E0828CDC /* WatchInsightGenerator.swift */,
+				0912ABE009F9085C3D1DAC68 /* WatchRecoveryCalculator.swift */,
+				5545AC683DA2E1A6B668D577 /* WatchScoreEngine.swift */,
+				BA84BA533F5083D8CC366876 /* WatchStrainCalculator.swift */,
+			);
+			path = ScoreEngine;
+			sourceTree = "<group>";
+		};
 		353876499368A20B37535A0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				CBC466178063D0FB956981B8 /* ComponentCard.swift */,
+				702E446E1FC7037CE841CF28 /* DataQualityBadge.swift */,
 				737C1F27370CCE2487D347AD /* ScoreRing.swift */,
+				61439367E90DC7AC14AA7661 /* WeightVisualization.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -185,7 +368,10 @@
 			isa = PBXGroup;
 			children = (
 				B2A2797507C6E202EC3B582D /* Dashboard */,
+				487D3424B5AC7C67B4863137 /* Onboarding */,
+				EAD8A7CE9956A05550038E66 /* Premium */,
 				76A4C4BE2E428CD0C5D6DB26 /* Recovery */,
+				4764DD87F56492F7524B2464 /* Settings */,
 				4205CDE7528C81511D8C1EF2 /* Sleep */,
 				D895F228CE6F2B08B14E1768 /* Strain */,
 			);
@@ -209,6 +395,39 @@
 			path = Sleep;
 			sourceTree = "<group>";
 		};
+		4764DD87F56492F7524B2464 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BDE8C725B5088C5BC2E03EE2 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		487D3424B5AC7C67B4863137 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				681D07BA01036002061D5FE0 /* ExplainerView.swift */,
+				F87CC3525CF1BB06B901F43C /* HealthKitPermissionView.swift */,
+				6C70D9B8FFA194F796B84D5D /* NotificationPermissionView.swift */,
+				BEEFAC4807B37BC6CE5EEF62 /* OnboardingCompleteView.swift */,
+				4AB84BF8A4BAE3475CF33BF6 /* OnboardingContainerView.swift */,
+				43B05B8064BA26083164D989 /* OnboardingCoordinator.swift */,
+				824F6CD956BDB72E4AD8F17B /* SleepGoalSetupView.swift */,
+				C8E395D5D58A04A386E51689 /* WelcomeView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		6512426D1B89CD6DBCFCC433 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				2B899865F8E7560A1DF6F100 /* FeatureGate.swift */,
+				DA2460959E84724BC5DE51B3 /* PremiumManager.swift */,
+				5ACC378A9F75DABCB42D2FC2 /* StoreKitManager.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
 		70015EA49407D3D52684E386 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +444,7 @@
 				2C63DC019AEACD9CE00BE68A /* Packages */,
 				8DBE9FE16D2D2357EC14135C /* StrainLab */,
 				25D14A5848AA6B45AE5E27EB /* StrainLabWatch */,
+				7BF55F2568D38A55D16DF78E /* StrainLabWidget */,
 				883979B25725C75EC348A1EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -245,11 +465,24 @@
 			path = Recovery;
 			sourceTree = "<group>";
 		};
+		7BF55F2568D38A55D16DF78E /* StrainLabWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CA0FA97B33259CE55EE6E2D0 /* Info.plist */,
+				12075CE78FE239BB9712D305 /* RecoveryWidget.swift */,
+				F9D2EEBB76C6B7934A44E113 /* StrainLabWidget.entitlements */,
+				4D8D3DC904628C4CED4FECB0 /* StrainLabWidgetBundle.swift */,
+				1638FC97293A891BE4DB8F3F /* WidgetDataProvider.swift */,
+			);
+			path = StrainLabWidget;
+			sourceTree = "<group>";
+		};
 		883979B25725C75EC348A1EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				8A3AC256649EF8ACF63387D5 /* StrainLab.app */,
 				8E46CC3B8A781F0F512AD0BE /* StrainLabWatch.app */,
+				00FFAE02043B2F30AD4DCA78 /* StrainLabWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,8 +506,12 @@
 			children = (
 				0B53CB936E35832B9B81D278 /* Connectivity */,
 				D0807F5F758F151388CF8E47 /* HealthKit */,
+				EF6D4A0F5C7C24BF4F8DDBF7 /* Insights */,
+				20D90ECA378C51E0DD5E6ADF /* Notifications */,
 				70015EA49407D3D52684E386 /* Persistence */,
+				6512426D1B89CD6DBCFCC433 /* Premium */,
 				B18B96EDDA6A3394CDA0EBC8 /* Processing */,
+				EDEF602F9B66183416CFFA19 /* Settings */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -283,10 +520,14 @@
 			isa = PBXGroup;
 			children = (
 				D6E43AB3DC4F79D3E46696C5 /* BaselineCalculator.swift */,
+				E29062A8D30565D36914819E /* DataQualityAssessor.swift */,
 				D824A3F0948A25DAFFA32149 /* HRVProcessor.swift */,
 				6F5A77139EBDD0607DE84CAD /* RecoveryScoreCalculator.swift */,
 				CC16DB57C406C0962ADB6DC3 /* ScoreEngine.swift */,
+				340F43646D0D3CB55374A2D5 /* SleepConsistencyCalculator.swift */,
+				7D2C39B6B2BDBEF2BD5FB51B /* SleepDebtTracker.swift */,
 				84BD1E0C5A3F35E4DADDAAE6 /* SleepScoreCalculator.swift */,
+				7B3365F5957469B889612A46 /* StrainGuidanceCalculator.swift */,
 				ABCC64D5B81284F9053EBD71 /* StrainScoreCalculator.swift */,
 			);
 			path = Processing;
@@ -297,6 +538,8 @@
 			children = (
 				99B2194634F7E2DED93C52EC /* DashboardView.swift */,
 				408F70E00210FFAF5D198EDF /* DashboardViewModel.swift */,
+				AECEE8800AF7C51E5FE83B5A /* HeroRecoveryCard.swift */,
+				4F579D7F6279C40BB82AB320 /* InsightCardView.swift */,
 				C9AE64964AEBA38022F3B246 /* TrendChart.swift */,
 			);
 			path = Dashboard;
@@ -306,6 +549,10 @@
 			isa = PBXGroup;
 			children = (
 				4595E48EB65FE1F57DEAA7B7 /* ActiveWorkoutView.swift */,
+				774B37BCD9C0E88DE4C374F6 /* DailyReadinessView.swift */,
+				48E19096312BACDD4A648999 /* RecoveryDetailWatchView.swift */,
+				A6DE0FD3578DE33F0B49EF1D /* SleepDetailWatchView.swift */,
+				FB733663CF9D7F5C9B3D6800 /* StrainGuidanceWatchView.swift */,
 				E044DBAA1F8424A7004DED04 /* WatchHomeView.swift */,
 				C8BD307D73A1DE619DA5299A /* WorkoutSelectionView.swift */,
 			);
@@ -341,14 +588,78 @@
 			isa = PBXGroup;
 			children = (
 				E8C8EF3E6E767DC289011702 /* StrainLabWatchApp.swift */,
+				DA5D00703ED6BF2746C590C7 /* WatchAppDelegate.swift */,
+				E6BF92E8DFA0EABA9DAF95B1 /* Components */,
 				B7BBE3BEC1267B101110FC86 /* Views */,
 			);
 			path = App;
 			sourceTree = "<group>";
 		};
+		E6BF92E8DFA0EABA9DAF95B1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				95AE856218F62455A7CB38C2 /* WatchCompactCards.swift */,
+				8381E089A3CD059EAD6B5AEC /* WatchInsightBanner.swift */,
+				DF0BA3E26DD8FE836E3181FA /* WatchScoreRing.swift */,
+				5FECC24D632506F46455E76C /* WatchTrendChart.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EAD8A7CE9956A05550038E66 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				B27030E88A7386966CDBC570 /* PaywallView.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		EADBF5CB27F4C1826A11D624 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				F3901D2C0F6B180132BC3F47 /* WatchTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		EDEF602F9B66183416CFFA19 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				72BA46822DCE2879878D7D9E /* SettingsManager.swift */,
+				0637801394C57E62D7DEBAF3 /* UserSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		EF6D4A0F5C7C24BF4F8DDBF7 /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				31EC17D7A92393D57F60FE8E /* DailyInsight.swift */,
+				C5AFEA899B794A311F8E034B /* InsightGenerator.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		601F335DB41651DD1AF0D86A /* StrainLabWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0721177F8022534F96A7AAB2 /* Build configuration list for PBXNativeTarget "StrainLabWidget" */;
+			buildPhases = (
+				298E79D781CCED302DED5E69 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StrainLabWidget;
+			packageProductDependencies = (
+			);
+			productName = StrainLabWidget;
+			productReference = 00FFAE02043B2F30AD4DCA78 /* StrainLabWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		9531993A0FDA00A7607DBDD9 /* StrainLab */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82FE6DDE9B35CCCC8CCB0C87 /* Build configuration list for PBXNativeTarget "StrainLab" */;
@@ -356,10 +667,13 @@
 				4A2A97ABC6D98EDB14353C40 /* Sources */,
 				614EA04ED753627DE0CA24D1 /* Resources */,
 				16D6F0A3612A48FE787AAA00 /* Frameworks */,
+				14F96DD2B8B4FA8047A11746 /* Embed Foundation Extensions */,
+				027816292EED5FE700BC1835 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				567884C861DFCC77B03B8A83 /* PBXTargetDependency */,
 			);
 			name = StrainLab;
 			packageProductDependencies = (
@@ -396,7 +710,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2610;
 			};
 			buildConfigurationList = 1AB4EC72118CD12251FD0866 /* Build configuration list for PBXProject "StrainLab" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -411,12 +725,12 @@
 			packageReferences = (
 				F6A142C44C7367EA43ABC7D2 /* XCLocalSwiftPackageReference "StrainLabKit" */,
 			);
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9531993A0FDA00A7607DBDD9 /* StrainLab */,
 				C841CFB3A041AC095E514A06 /* StrainLabWatch */,
+				601F335DB41651DD1AF0D86A /* StrainLabWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -441,6 +755,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		298E79D781CCED302DED5E69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F83FF6E3A77BB46A2A990C /* RecoveryWidget.swift in Sources */,
+				35806BEE7FB3397DC993DC38 /* StrainLabWidgetBundle.swift in Sources */,
+				8558C5173D050C6199F9DC9B /* WidgetDataProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A2A97ABC6D98EDB14353C40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,21 +779,48 @@
 				4C752245141B1DC720636FDD /* ComponentCard.swift in Sources */,
 				9F457C33433553017C243B2C /* ContentView.swift in Sources */,
 				2EF411DE0CD13C5081D0839E /* CoreDataManager.swift in Sources */,
+				3AE8AD166B8E4A90FAD8BAD4 /* DailyInsight.swift in Sources */,
 				9A2EFD7ED423915AF48A6C47 /* DashboardView.swift in Sources */,
 				219D0B39AFF96B4FEDD816A7 /* DashboardViewModel.swift in Sources */,
+				66935D38CE5869F9B146FAC0 /* DataQualityAssessor.swift in Sources */,
+				937BD1D514788955C8A4A360 /* DataQualityBadge.swift in Sources */,
+				F33DC7D7350086B7A5303B3C /* ExplainerView.swift in Sources */,
+				BD14CF1FFB4A1E35B13114CF /* FeatureGate.swift in Sources */,
 				69A6D2A705D38A3B1B66E93F /* HRVProcessor.swift in Sources */,
+				BA9869855586969FA7A7EFB4 /* HealthKitPermissionView.swift in Sources */,
+				49AA9C92ACDD36799680E2FF /* HeroRecoveryCard.swift in Sources */,
+				65A4D43528D92B2ECAD31929 /* InsightCardView.swift in Sources */,
+				BA80BFAC6449CA5EF41599A8 /* InsightGenerator.swift in Sources */,
+				E489F796EFC36FBDB7E4671F /* NotificationContentBuilder.swift in Sources */,
+				1FD3C5494F22B652A8C407D9 /* NotificationManager.swift in Sources */,
+				7680D79265C1D11548C1ED85 /* NotificationPermissionView.swift in Sources */,
+				E424E9DA5FC1CD29F73FD3E0 /* OnboardingCompleteView.swift in Sources */,
+				F2BC9F579EA4221CAD03C2C8 /* OnboardingContainerView.swift in Sources */,
+				9589876407B440183069AAFB /* OnboardingCoordinator.swift in Sources */,
+				2FFE96B065B5B4CFFA1A642A /* PaywallView.swift in Sources */,
+				529C1FBD11CBB87D9A0C266E /* PremiumManager.swift in Sources */,
 				334AC48D3EFE1450C5A3BD62 /* RecoveryDetailView.swift in Sources */,
 				5D0B6C82D78C1ADB68C0D4E9 /* RecoveryScoreCalculator.swift in Sources */,
 				F0D3BED5A24140CB3E9168EB /* ScoreEngine.swift in Sources */,
 				4FDC8742C265B9C89B2809A0 /* ScoreRing.swift in Sources */,
+				54C73F9AB54986C181BA0DBC /* SettingsManager.swift in Sources */,
+				2FB5EC5411A83B6A469B7A61 /* SettingsView.swift in Sources */,
+				415D8C162B6B88090865E2D1 /* SleepConsistencyCalculator.swift in Sources */,
+				A297B8251BC131B80D8F5AD2 /* SleepDebtTracker.swift in Sources */,
 				F2496C0479591C910CE54055 /* SleepDetailView.swift in Sources */,
+				B67E8A90352DBAB5CAD06465 /* SleepGoalSetupView.swift in Sources */,
 				312E018591E5D662AB55EDB1 /* SleepScoreCalculator.swift in Sources */,
+				B88F46724B76B49EAB9597F0 /* StoreKitManager.swift in Sources */,
 				E15FD4AE19A0BA1A282B3A2A /* StrainDetailView.swift in Sources */,
+				AC33FA46BA12E5D49555C457 /* StrainGuidanceCalculator.swift in Sources */,
 				8BA69E34D8AE9677345E2523 /* StrainLabApp.swift in Sources */,
 				124CB0C4BCF619FF55D320D8 /* StrainLabModelDefinition.swift in Sources */,
 				F6921F4568B9A9908C15FD34 /* StrainLabTheme.swift in Sources */,
 				E339FCE43F33540B69DB4294 /* StrainScoreCalculator.swift in Sources */,
 				8BB2980CBF42DBC5C108F793 /* TrendChart.swift in Sources */,
+				CA9EFBAED54DFACFCCF527CD /* UserSettings.swift in Sources */,
+				78D57E69A204EE818D3E2CB9 /* WeightVisualization.swift in Sources */,
+				7011BDD05D7DBF76507D8EBF /* WelcomeView.swift in Sources */,
 				CA1A2F4FB6C1098DFBC5CB85 /* iOSConnectivityManager.swift in Sources */,
 				6D57238B65B8763A56227E24 /* iOSHealthKitManager.swift in Sources */,
 			);
@@ -480,16 +831,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				45948CE12D04963FC7E891AC /* ActiveWorkoutView.swift in Sources */,
+				6654E6B02AFE6814B7DF97D3 /* DailyReadinessView.swift in Sources */,
+				3649EB5AB77AEFBD9F055B75 /* RecoveryDetailWatchView.swift in Sources */,
+				164A96C520804D0BF661D9C1 /* RecoveryWatchComplication.swift in Sources */,
+				534B819C0F1F593897ADA2C7 /* SleepDetailWatchView.swift in Sources */,
+				49FC66124E9C319A680B347F /* StrainGuidanceWatchView.swift in Sources */,
 				B83F2B13EEFC7098DB9596B4 /* StrainLabWatchApp.swift in Sources */,
+				54732EBA912F55C7F5754E16 /* StrainWatchComplication.swift in Sources */,
+				9BCD7CE2F9DA08767EAB7749 /* WatchAppDelegate.swift in Sources */,
+				CAC5E487564D836D942823C5 /* WatchBackgroundManager.swift in Sources */,
+				07F1D4CE8494F1F1F1961232 /* WatchCompactCards.swift in Sources */,
+				65D1AFE6A84476E50712931E /* WatchComplicationBundle.swift in Sources */,
 				DBEF6654067CBAA5A80DF779 /* WatchConnectivityManager.swift in Sources */,
+				651FD5962267D5DDA4773B65 /* WatchDataStore.swift in Sources */,
 				B585429E63CD5AC53D1866C4 /* WatchHealthKitManager.swift in Sources */,
 				82E91A734C5B3E4C1E547014 /* WatchHomeView.swift in Sources */,
+				30C5F47B4E5E68F9F0B01C0D /* WatchInsightBanner.swift in Sources */,
+				B57572A7F9BB596296EA1D7E /* WatchInsightGenerator.swift in Sources */,
+				4F68AE321207F593D169014C /* WatchNotificationManager.swift in Sources */,
+				40BECEBA45A0E53881DB6EE7 /* WatchRecoveryCalculator.swift in Sources */,
+				370A882C12F0272068DF8A21 /* WatchScoreEngine.swift in Sources */,
+				DDFC77FB91A075EABA666F23 /* WatchScoreRing.swift in Sources */,
+				3876588EE7D675C90198F9EA /* WatchStrainCalculator.swift in Sources */,
+				D4633654DC3E28F5ECFB66DA /* WatchTheme.swift in Sources */,
+				16D39A100D805EF482BE3ED5 /* WatchTrendChart.swift in Sources */,
 				4A856D7352AD9B42A01A249D /* WorkoutSelectionView.swift in Sources */,
 				4F88415014625068DA54F0EA /* WorkoutSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		567884C861DFCC77B03B8A83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 601F335DB41651DD1AF0D86A /* StrainLabWidget */;
+			targetProxy = 34C49AE95D71E83A85D2D2C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		39AF80D2CF1C87EBA369957D /* Release */ = {
@@ -499,6 +878,7 @@
 				CODE_SIGN_ENTITLEMENTS = StrainLab/StrainLab.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 376TSJU3K3;
 				INFOPLIST_FILE = StrainLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,6 +889,26 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3EB5D3151753117F5BDDF4DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StrainLabWidget/StrainLabWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 376TSJU3K3;
+				INFOPLIST_FILE = StrainLabWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strainlab.app.widget;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -546,9 +946,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -568,6 +970,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -581,6 +984,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = StrainLabWatch/StrainLabWatch.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 376TSJU3K3;
 				INFOPLIST_FILE = StrainLabWatch/Info.plist;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.strainlab.app.watchkitapp;
@@ -597,6 +1001,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = StrainLabWatch/StrainLabWatch.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 376TSJU3K3;
 				INFOPLIST_FILE = StrainLabWatch/Info.plist;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.strainlab.app.watchkitapp;
@@ -614,6 +1019,7 @@
 				CODE_SIGN_ENTITLEMENTS = StrainLab/StrainLab.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 376TSJU3K3;
 				INFOPLIST_FILE = StrainLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -661,9 +1067,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -676,6 +1084,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -683,9 +1092,38 @@
 			};
 			name = Release;
 		};
+		BF1623BD0F24E211E902F0D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StrainLabWidget/StrainLabWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 376TSJU3K3;
+				INFOPLIST_FILE = StrainLabWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strainlab.app.widget;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0721177F8022534F96A7AAB2 /* Build configuration list for PBXNativeTarget "StrainLabWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1623BD0F24E211E902F0D9 /* Debug */,
+				3EB5D3151753117F5BDDF4DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		1AB4EC72118CD12251FD0866 /* Build configuration list for PBXProject "StrainLab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

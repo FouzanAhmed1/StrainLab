@@ -2,6 +2,12 @@ import Foundation
 import HealthKit
 import StrainLabKit
 
+public enum HealthKitError: Error {
+    case notAvailable
+    case authorizationDenied
+    case queryFailed(Error)
+}
+
 public actor iOSHealthKitManager: HealthDataProvider {
     private let healthStore = HKHealthStore()
 

@@ -134,7 +134,7 @@ struct RecoveryDetailView: View {
                 .font(StrainLabTheme.labelFont)
                 .foregroundStyle(StrainLabTheme.textTertiary)
 
-            ForEach(generateInsights(score), id: \.self) { insight in
+            ForEach(Array(generateInsights(score).enumerated()), id: \.offset) { _, insight in
                 InsightCard(text: insight.text, type: insight.type)
             }
         }
