@@ -68,6 +68,20 @@ public final class WatchDataStore: @unchecked Sendable {
 
     public func saveSleepScore(_ score: SleepScore) {
         save(score, forKey: Keys.sleepScore)
+        // Also save in complication-friendly format
+        defaults.set(score.score, forKey: "watch.score.sleep.value")
+        defaults.set(sleepCategory(for: score.score), forKey: "watch.score.sleep.category")
+        defaults.set(score.components.totalDurationMinutes, forKey: "watch.score.sleep.duration")
+        defaults.set(score.components.sleepNeedMinutes, forKey: "watch.score.sleep.need")
+    }
+
+    private func sleepCategory(for score: Double) -> String {
+        switch score {
+        case 85...100: return "excellent"
+        case 70..<85: return "good"
+        case 50..<70: return "fair"
+        default: return "poor"
+        }
     }
 
     public func getSleepScore() -> SleepScore? {

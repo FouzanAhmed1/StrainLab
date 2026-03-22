@@ -8,5 +8,6 @@ struct WatchComplicationBundle: WidgetBundle {
     var body: some Widget {
         RecoveryWatchComplication()
         StrainWatchComplication()
+        SleepWatchComplication()
     }
 }
