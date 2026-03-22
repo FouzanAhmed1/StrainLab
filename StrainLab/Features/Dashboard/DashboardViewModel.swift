@@ -1,5 +1,6 @@
 import Foundation
 import StrainLabKit
+import WidgetKit
 
 @MainActor
 final class DashboardViewModel: ObservableObject {
@@ -58,6 +59,9 @@ final class DashboardViewModel: ObservableObject {
                 sleep: slp,
                 previousDayStrain: previousDayStrain
             )
+
+            // Update widget data
+            updateWidgetData()
         } catch {
             errorMessage = error.localizedDescription
             // Show no data insight when there's an error
@@ -105,4 +109,23 @@ struct DailyTrend: Identifiable {
     let recoveryScore: Double
     let strainScore: Double
     let sleepScore: Double
+}
+
+// MARK: - Widget Data Update
+
+extension DashboardViewModel {
+    private func updateWidgetData() {
+        guard let recovery = recoveryScore else { return }
+
+        let sleepHours = (sleepScore?.components.totalDurationMinutes ?? 0) / 60
+
+        guard let defaults = UserDefaults(suiteName: "group.com.strainlab.shared") else { return }
+        defaults.set(recovery.score, forKey: "widget.recovery.score")
+        defaults.set(recovery.category.rawValue, forKey: "widget.recovery.category")
+        defaults.set(strainScore?.score ?? 0, forKey: "widget.strain.score")
+        defaults.set(sleepHours, forKey: "widget.sleep.hours")
+        defaults.set(Date(), forKey: "widget.lastUpdate")
+
+        WidgetCenter.shared.reloadTimelines(ofKind: "RecoveryWidget")
+    }
 }

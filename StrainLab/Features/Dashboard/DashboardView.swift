@@ -23,6 +23,25 @@ struct DashboardView: View {
             }
             .strainLabBackground()
             .navigationTitle("StrainLab")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    HStack(spacing: StrainLabTheme.paddingS) {
+                        NavigationLink {
+                            WatchControlView()
+                        } label: {
+                            Image(systemName: "applewatch")
+                                .foregroundStyle(StrainLabTheme.strainBlue)
+                        }
+
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image(systemName: "gearshape.fill")
+                                .foregroundStyle(StrainLabTheme.textSecondary)
+                        }
+                    }
+                }
+            }
             .refreshable {
                 await viewModel.refresh()
             }

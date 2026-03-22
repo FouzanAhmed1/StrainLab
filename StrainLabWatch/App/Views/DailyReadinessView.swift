@@ -175,14 +175,55 @@ struct DailyReadinessView: View {
             }
             .buttonStyle(.plain)
         } else {
-            NavigationLink {
-                WorkoutSelectionView()
-            } label: {
-                Label("Start Workout", systemImage: "plus.circle.fill")
-                    .font(WatchTheme.captionFont)
+            VStack(spacing: WatchTheme.paddingS) {
+                NavigationLink {
+                    WorkoutSelectionView()
+                } label: {
+                    Label("Start Workout", systemImage: "plus.circle.fill")
+                        .font(WatchTheme.captionFont)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(WatchTheme.recoveryGreen)
+
+                // Quick access to live monitoring
+                HStack(spacing: WatchTheme.paddingS) {
+                    NavigationLink {
+                        LiveHeartRateView()
+                    } label: {
+                        VStack(spacing: 2) {
+                            Image(systemName: "heart.fill")
+                                .font(.system(size: 14))
+                                .foregroundStyle(.red)
+                            Text("HR")
+                                .font(.system(size: 9))
+                                .foregroundStyle(WatchTheme.textSecondary)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, WatchTheme.paddingS)
+                        .background(WatchTheme.surface)
+                        .clipShape(RoundedRectangle(cornerRadius: WatchTheme.cornerRadiusS))
+                    }
+                    .buttonStyle(.plain)
+
+                    NavigationLink {
+                        LiveRecoveryView()
+                    } label: {
+                        VStack(spacing: 2) {
+                            Image(systemName: "leaf.fill")
+                                .font(.system(size: 14))
+                                .foregroundStyle(WatchTheme.recoveryGreen)
+                            Text("HRV")
+                                .font(.system(size: 9))
+                                .foregroundStyle(WatchTheme.textSecondary)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, WatchTheme.paddingS)
+                        .background(WatchTheme.surface)
+                        .clipShape(RoundedRectangle(cornerRadius: WatchTheme.cornerRadiusS))
+                    }
+                    .buttonStyle(.plain)
+                }
             }
-            .buttonStyle(.borderedProminent)
-            .tint(WatchTheme.recoveryGreen)
         }
     }
 

@@ -1,10 +1,13 @@
 import SwiftUI
+import StoreKit
 
 struct PaywallView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var premiumManager = PremiumManager.shared
+    @ObservedObject private var storeManager = StoreKitManager.shared
     @State private var selectedPlan: PremiumPlan = .yearly
     @State private var isPurchasing = false
+    @State private var errorMessage: String?
 
     var body: some View {
         NavigationStack {
@@ -203,22 +206,46 @@ struct PaywallView: View {
 
     private func purchaseSelectedPlan() async {
         isPurchasing = true
-        // Simulate purchase (StoreKit implementation would go here)
-        try? await Task.sleep(nanoseconds: 2_000_000_000)
-        await MainActor.run {
-            premiumManager.upgradeToPremium()
-            isPurchasing = false
-            dismiss()
+        errorMessage = nil
+
+        do {
+            let product: Product?
+            switch selectedPlan {
+            case .yearly:
+                product = storeManager.yearlyProduct
+            case .monthly:
+                product = storeManager.monthlyProduct
+            }
+
+            if let product = product {
+                let transaction = try await storeManager.purchase(product)
+                if transaction != nil {
+                    // Purchase successful
+                    dismiss()
+                }
+            } else {
+                // Fallback for testing/development without StoreKit products
+                premiumManager.upgradeToPremium()
+                dismiss()
+            }
+        } catch {
+            errorMessage = error.localizedDescription
         }
+
+        isPurchasing = false
     }
 
     private func restorePurchases() async {
         isPurchasing = true
-        // Simulate restore
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
-        await MainActor.run {
-            isPurchasing = false
+        errorMessage = nil
+
+        await storeManager.restorePurchases()
+
+        if let error = storeManager.error {
+            errorMessage = error
         }
+
+        isPurchasing = false
     }
 }
 
