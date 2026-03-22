@@ -8,11 +8,27 @@ public final class WatchConnectivityManager: NSObject, ObservableObject, @unchec
     @Published public var isReachable = false
     @Published public var isPaired = false
     @Published public var lastSyncDate: Date?
+    @Published public var isSyncing = false
+
+    // Real-time data streaming
+    @Published public var liveHeartRateFromPhone: Double = 0
+    @Published public var liveStrainFromPhone: Double = 0
+    @Published public var isWorkoutActiveOnPhone = false
+
+    // Workout control callbacks
+    public var onWorkoutStartRequested: ((String) -> Void)?
+    public var onWorkoutPauseRequested: (() -> Void)?
+    public var onWorkoutResumeRequested: (() -> Void)?
+    public var onWorkoutStopRequested: (() -> Void)?
 
     private var session: WCSession?
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     private let dataStore = WatchDataStore.shared
+
+    // Real-time streaming timer
+    private var streamingTimer: Timer?
+    private var isStreamingLiveData = false
 
     private override init() {
         super.init()
@@ -21,6 +37,109 @@ public final class WatchConnectivityManager: NSObject, ObservableObject, @unchec
             session = WCSession.default
             session?.delegate = self
             session?.activate()
+        }
+    }
+
+    // MARK: - Real-Time Data Streaming
+
+    /// Start streaming live heart rate and workout data to iPhone
+    public func startLiveDataStreaming(healthKit: WatchHealthKitManager) {
+        guard !isStreamingLiveData else { return }
+        isStreamingLiveData = true
+
+        streamingTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            self?.sendLiveHeartRateUpdate(healthKit.currentHeartRate, zone: healthKit.heartRateZone)
+        }
+    }
+
+    /// Stop streaming live data
+    public func stopLiveDataStreaming() {
+        streamingTimer?.invalidate()
+        streamingTimer = nil
+        isStreamingLiveData = false
+    }
+
+    /// Send real-time heart rate update to iPhone
+    public func sendLiveHeartRateUpdate(_ heartRate: Double, zone: HeartRateZone) {
+        guard let session = session,
+              session.isReachable,
+              heartRate > 0 else { return }
+
+        let message: [String: Any] = [
+            "type": "liveHeartRate",
+            "heartRate": heartRate,
+            "zone": zone.rawValue,
+            "timestamp": Date().timeIntervalSince1970
+        ]
+
+        session.sendMessage(message, replyHandler: nil, errorHandler: nil)
+    }
+
+    /// Send live workout stats to iPhone
+    public func sendLiveWorkoutStats(
+        heartRate: Double,
+        strain: Double,
+        calories: Double,
+        duration: TimeInterval,
+        zone: HeartRateZone
+    ) {
+        guard let session = session,
+              session.isReachable else { return }
+
+        let message: [String: Any] = [
+            "type": "liveWorkoutStats",
+            "heartRate": heartRate,
+            "strain": strain,
+            "calories": calories,
+            "duration": duration,
+            "zone": zone.rawValue,
+            "timestamp": Date().timeIntervalSince1970
+        ]
+
+        session.sendMessage(message, replyHandler: nil, errorHandler: nil)
+    }
+
+    /// Notify iPhone that workout started
+    public func notifyWorkoutStarted(activityType: String) {
+        guard let session = session else { return }
+
+        let message: [String: Any] = [
+            "type": "workoutStarted",
+            "activityType": activityType,
+            "timestamp": Date().timeIntervalSince1970
+        ]
+
+        if session.isReachable {
+            session.sendMessage(message, replyHandler: nil, errorHandler: nil)
+        } else {
+            session.transferUserInfo(message)
+        }
+    }
+
+    /// Notify iPhone that workout ended
+    public func notifyWorkoutEnded(
+        strain: Double,
+        duration: TimeInterval,
+        calories: Double,
+        avgHeartRate: Double,
+        maxHeartRate: Double
+    ) {
+        guard let session = session else { return }
+
+        let message: [String: Any] = [
+            "type": "workoutEnded",
+            "strain": strain,
+            "duration": duration,
+            "calories": calories,
+            "avgHeartRate": avgHeartRate,
+            "maxHeartRate": maxHeartRate,
+            "timestamp": Date().timeIntervalSince1970
+        ]
+
+        if session.isReachable {
+            session.sendMessage(message, replyHandler: nil, errorHandler: nil)
+        } else {
+            session.transferUserInfo(message)
         }
     }
 
@@ -216,6 +335,47 @@ extension WatchConnectivityManager: WCSessionDelegate {
             NotificationCenter.default.post(name: .watchSyncCompleted, object: nil)
         case "phoneSyncPayload":
             handlePhoneSyncPayload(message)
+
+        // Workout control commands from iPhone
+        case "startWorkout":
+            if let activityType = message["activityType"] as? String {
+                DispatchQueue.main.async {
+                    self.onWorkoutStartRequested?(activityType)
+                }
+            }
+        case "pauseWorkout":
+            DispatchQueue.main.async {
+                self.onWorkoutPauseRequested?()
+            }
+        case "resumeWorkout":
+            DispatchQueue.main.async {
+                self.onWorkoutResumeRequested?()
+            }
+        case "stopWorkout":
+            DispatchQueue.main.async {
+                self.onWorkoutStopRequested?()
+            }
+
+        // Live data from iPhone (if mirroring)
+        case "liveDataFromPhone":
+            if let hr = message["heartRate"] as? Double {
+                DispatchQueue.main.async {
+                    self.liveHeartRateFromPhone = hr
+                }
+            }
+            if let strain = message["strain"] as? Double {
+                DispatchQueue.main.async {
+                    self.liveStrainFromPhone = strain
+                }
+            }
+
+        case "phoneWorkoutStatus":
+            if let isActive = message["isActive"] as? Bool {
+                DispatchQueue.main.async {
+                    self.isWorkoutActiveOnPhone = isActive
+                }
+            }
+
         default:
             break
         }
