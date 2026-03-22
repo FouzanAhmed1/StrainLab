@@ -35,9 +35,7 @@ struct FeatureGate: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: StrainLabTheme.cornerRadiusM))
         }
         .sheet(isPresented: $showingPaywall) {
-            // PaywallView will be added later
-            Text("Premium Required")
-                .font(StrainLabTheme.titleFont)
+            PaywallView()
         }
     }
 }

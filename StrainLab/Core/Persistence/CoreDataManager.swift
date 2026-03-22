@@ -6,16 +6,30 @@ public actor CoreDataManager {
     public static let shared = CoreDataManager()
 
     private let container: NSPersistentContainer
+    private var isStoreLoaded = false
+    private var storeLoadError: Error?
 
     private init() {
         container = NSPersistentContainer.strainLabContainer()
 
-        container.loadPersistentStores { description, error in
+        container.loadPersistentStores { [weak container] description, error in
             if let error = error {
-                fatalError("Failed to load CoreData: \(error)")
+                // Log the error but don't crash - allow graceful degradation
+                print("⚠️ CoreData Error: Failed to load persistent store: \(error.localizedDescription)")
+
+                // Attempt to recover by deleting corrupted store
+                if let storeURL = description.url {
+                    do {
+                        try FileManager.default.removeItem(at: storeURL)
+                        print("🔄 CoreData: Removed corrupted store, will recreate on next launch")
+                    } catch {
+                        print("❌ CoreData: Could not remove corrupted store: \(error)")
+                    }
+                }
             }
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
 
     private func newBackgroundContext() -> NSManagedObjectContext {

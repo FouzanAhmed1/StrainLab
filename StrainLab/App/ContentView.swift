@@ -2,10 +2,13 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var appState: AppState
+    @StateObject private var onboardingCoordinator = OnboardingCoordinator.shared
 
     var body: some View {
         Group {
-            if appState.isLoading {
+            if !onboardingCoordinator.isOnboardingComplete {
+                OnboardingContainerView()
+            } else if appState.isLoading {
                 loadingView
             } else if !appState.isAuthorized {
                 authorizationView
@@ -14,7 +17,17 @@ struct ContentView: View {
             }
         }
         .task {
-            await appState.initialize()
+            // Only initialize if onboarding is complete
+            if onboardingCoordinator.isOnboardingComplete {
+                await appState.initialize()
+            }
+        }
+        .onChange(of: onboardingCoordinator.isOnboardingComplete) { _, isComplete in
+            if isComplete {
+                Task {
+                    await appState.initialize()
+                }
+            }
         }
     }
 
